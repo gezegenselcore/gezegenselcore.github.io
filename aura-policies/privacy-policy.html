@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AURA — Gizlilik Politikası / Privacy Policy | GezegenselCore</title>
+  <meta name="description" content="AURA mobil uygulaması gizlilik politikası — Türkçe ve English" />
+  <style>
+    :root {
+      --bg: #fafafa;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #5b21b6;
+      --highlight-bg: #fef3c7;
+      --highlight-border: #f59e0b;
+      --card-bg: #f5f3ff;
+      --card-border: #7c3aed;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 1.25rem 1.25rem 3rem;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+    }
+    .switcher {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .switcher button {
+      font: inherit;
+      cursor: pointer;
+      padding: 0.5rem 0.85rem;
+      border-radius: 0.5rem;
+      border: 2px solid #e2e8f0;
+      background: #fff;
+      color: var(--text);
+    }
+    .switcher button:hover {
+      border-color: #cbd5e1;
+    }
+    .switcher button[aria-pressed="true"] {
+      border-color: var(--accent);
+      background: #f5f3ff;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    h1 { font-size: 1.45rem; margin-bottom: 0.25rem; }
+    .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    h2 { font-size: 1.15rem; margin-top: 1.75rem; border-top: 1px solid #e2e8f0; padding-top: 1.25rem; }
+    h3 { font-size: 1rem; margin-top: 1rem; color: #334155; }
+    a { color: var(--accent); }
+    ul { padding-left: 1.25rem; }
+    .highlight {
+      background: var(--highlight-bg);
+      border: 1px solid var(--highlight-border);
+      border-radius: 0.5rem;
+      padding: 1rem 1.1rem;
+      margin: 1.25rem 0;
+    }
+    .highlight strong { display: block; margin-bottom: 0.35rem; font-size: 1.05rem; }
+    .callout {
+      background: var(--card-bg);
+      border-left: 4px solid var(--card-border);
+      padding: 0.85rem 1rem;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="switcher" role="group" aria-label="Dil seçimi / Language">
+    <button type="button" id="btn-tr" aria-pressed="true">🇹🇷 Türkçe</button>
+    <button type="button" id="btn-en" aria-pressed="false">🇬🇧 English</button>
+  </div>
+
+  <article id="content-tr" lang="tr">
+    <h1>AURA — Gizlilik Politikası</h1>
+    <p class="meta"><strong>Son güncelleme:</strong> 5 Nisan 2026 · <strong>Geliştirici:</strong> GezegenselCore · <a href="mailto:support@gezegenselcore.com">support@gezegenselcore.com</a> · iOS ve Android</p>
+
+    <h2>1. Giriş</h2>
+    <p>Bu politika, <strong>AURA</strong> uygulamasını kullanırken kişisel verilerinizin nasıl işlendiğini açıklar. Uygulamayı kullanmaya devam ederek burada anlatılan uygulamayı kabul etmiş sayılırsınız. Sorularınız için bize yazabilirsiniz.</p>
+
+    <h2>2. Toplanan Veriler</h2>
+
+    <h3>Hesap bilgileri</h3>
+    <p><strong>Firebase Authentication</strong> ile e-posta, ad ve soyad; Google veya Apple ile giriş yaptığınızda ilgili hesap tanımlayıcıları işlenebilir.</p>
+
+    <h3>Profil (isteğe bağlı)</h3>
+    <p>Doğum tarihi, doğum yeri ve saati, cinsiyet gibi bilgileri yalnızca siz eklediğinizde kullanırız (örneğin kişiselleştirme ve uygulama özellikleri için).</p>
+
+    <h3>Konum (isteğe bağlı)</h3>
+    <p>Hassas konum (GPS) veya daha az hassas seçenekler (örneğin şehir düzeyi) yalnızca izin verdiğinizde kullanılır.</p>
+
+    <h3>Sağlık verileri (isteğe bağlı, izinle)</h3>
+    <p>Android’de <strong>Health Connect</strong>, iOS’ta <strong>HealthKit</strong> üzerinden yalnızca açıkça verdiğiniz izinlerle; örneğin adım, uyku veya nabız gibi verilere erişilebilir. Bu veriler yalnızca uygulama içinde, sunduğumuz özellikler için kullanılır.</p>
+
+    <h3>Kullanım verileri</h3>
+    <ul>
+      <li><strong>Firebase Analytics</strong> — anonimleştirilmiş veya toplu kullanım istatistikleri</li>
+      <li><strong>Firebase Crashlytics</strong> — çökme ve hata raporları (cihaz/uygulama sürümü gibi teknik bilgilerle)</li>
+      <li><strong>Push bildirimleri</strong> — cihazınıza bildirim göndermek için platform token’ı</li>
+      <li><strong>Bilişsel egzersiz skorları</strong> — <strong>Firestore</strong> üzerinde hesabınıza bağlı olarak saklanabilir</li>
+    </ul>
+
+    <h3>AI içerikleri</h3>
+    <p>AI rehber özelliğinde yazdığınız mesajlar, yanıt üretmek için <strong>Google Gemini</strong>’ye gönderilir. Bu mesajlar <strong>AURA’nın sunucularında saklanmaz</strong>; işleme sonrası bizim sistemimizde tutulmaz.</p>
+
+    <h3>Cihazda saklanan veriler</h3>
+    <div class="callout">
+      <strong>Rüya günlüğü ve yansıma notları yalnızca cihazınızda kalır.</strong> Bu içerikler sunucuya gönderilmez ve bulutta saklanmaz. Uygulamayı silerseniz veya cihaz verisini temizlerseniz bu kayıtlar da cihazdan kalkar (yedeklemediyseniz geri gelmez).
+    </div>
+
+    <h2>3. Verileri Nasıl Kullanıyoruz</h2>
+    <p>Verileri hesabınızı yönetmek, uygulamayı çalıştırmak, özellikleri kişiselleştirmek, güvenliği sağlamak, hataları gidermek, yasal yükümlülükleri yerine getirmek ve (izin verdiğiniz ölçüde) bildirim göndermek için kullanırız. Sağlık verilerini tanı veya tedavi amacıyla kullanmayız; AURA bir tıbbi cihaz değildir.</p>
+
+    <h2>4. Üçüncü Taraflar</h2>
+    <p>Hizmeti sunmak için güvendiğimiz sağlayıcılar verilerinize sınırlı erişebilir:</p>
+    <ul>
+      <li><strong>Google Firebase</strong> — Kimlik doğrulama, Firestore, Analytics, Crashlytics</li>
+      <li><strong>Google Maps / Places API</strong> — konum tabanlı özellikler</li>
+      <li><strong>Google Gemini AI</strong> — AI rehber yanıtları (mesajlarınız bu işlem için Google’a iletilir)</li>
+      <li><strong>Apple HealthKit</strong> / <strong>Google Health Connect</strong> — yalnızca sizin verdiğiniz izinlerle</li>
+    </ul>
+    <p>Bu şirketlerin kendi gizlilik kuralları da geçerlidir.</p>
+
+    <h2>5. Verilerinizi Satmıyoruz</h2>
+    <div class="highlight">
+      <strong>Verilerinizi satmıyoruz</strong>
+      <span>Kişisel verilerinizi reklam verenlere veya veri komisyoncularına satmıyor ve “satış” tanımına giren paylaşımlar için parayla takas etmiyoruz.</span>
+    </div>
+
+    <h2>6. Sağlık Verisi Hassasiyeti</h2>
+    <p>Sağlık ve aktivite verileri hassastır. Bu verilere yalnızca siz izin verdiğinizde erişilir; izni kapattığınızda veya bağlantıyı kestiğinizde bu akış durur. Verileri yalnızca uygulama içi deneyimi iyileştirmek için kullanırız; doktor veya acil servis yerine geçmez.</p>
+
+    <h2>7. Çocukların Gizliliği</h2>
+    <p>AURA, bilerek 13 yaşın altındaki çocuklardan kişisel veri toplamak için tasarlanmamıştır. 13 yaş altı olduğunu düşündüğünüz bir hesap fark ederseniz lütfen bize yazın.</p>
+
+    <h2>8. Haklarınız</h2>
+    <p>Yürürlükteki kanunlar çerçevesinde şunları talep edebilirsiniz:</p>
+    <ul>
+      <li>Hangi verilerin işlendiğini <strong>görme</strong></li>
+      <li>Yanlış veya eksik verilerin <strong>düzeltilmesi</strong></li>
+      <li>Hesabınızı ve buna bağlı bulut verilerini <strong>silme</strong> (Firestore’daki skorlar gibi)</li>
+    </ul>
+    <p>Talepler için: <a href="mailto:support@gezegenselcore.com">support@gezegenselcore.com</a></p>
+    <p>Rüya günlüğü ve yansıma notları cihazda olduğu için bunları silmek genelde uygulama veya cihaz ayarlarından yapılır.</p>
+
+    <h2>9. Güvenlik</h2>
+    <p>Verileri korumak için sektörde yaygın teknik ve idari önlemler kullanıyoruz. İnternet veya mobil ortamda hiçbir sistem %100 güvenli değildir; endişeniz varsa bize ulaşın.</p>
+
+    <h2>10. Değişiklikler</h2>
+    <p>Bu politikayı zaman zaman güncelleyebiliriz. Önemli değişikliklerde uygulama veya e-posta ile haber verebiliriz. Üstteki “Son güncelleme” tarihi her revizyonda yenilenir.</p>
+
+    <h2>11. İletişim</h2>
+    <p><strong>GezegenselCore</strong> — <a href="mailto:support@gezegenselcore.com">support@gezegenselcore.com</a></p>
+  </article>
+
+  <article id="content-en" lang="en" hidden>
+    <h1>AURA — Privacy Policy</h1>
+    <p class="meta"><strong>Last updated:</strong> April 5, 2026 · <strong>Developer:</strong> GezegenselCore · <a href="mailto:support@gezegenselcore.com">support@gezegenselcore.com</a> · iOS and Android</p>
+
+    <h2>1. Introduction</h2>
+    <p>This policy explains how <strong>AURA</strong> handles personal information when you use the app. By continuing to use AURA, you agree to the practices described here. If you have questions, please contact us.</p>
+
+    <h2>2. Data We Collect</h2>
+
+    <h3>Account information</h3>
+    <p>With <strong>Firebase Authentication</strong>, we process your email, name, and sign-in identifiers when you use email or sign in with <strong>Google</strong> or <strong>Apple</strong>.</p>
+
+    <h3>Profile (optional)</h3>
+    <p>Information such as date of birth, place and time of birth, and gender is used only if you choose to provide it (for example, personalization and in-app features).</p>
+
+    <h3>Location (optional)</h3>
+    <p>Precise location (GPS) or less precise options (for example, city-level) are used only when you allow it.</p>
+
+    <h3>Health data (optional, with permission)</h3>
+    <p>Through <strong>Health Connect</strong> on Android and <strong>HealthKit</strong> on iOS, we may access data such as steps, sleep, or heart rate only with your explicit permission. This data is used only inside the app for the features we provide.</p>
+
+    <h3>Usage data</h3>
+    <ul>
+      <li><strong>Firebase Analytics</strong> — aggregated or de-identified usage statistics</li>
+      <li><strong>Firebase Crashlytics</strong> — crash and error reports (with technical details like app version)</li>
+      <li><strong>Push notifications</strong> — a device token so we can deliver notifications</li>
+      <li><strong>Cognitive exercise scores</strong> — may be stored in <strong>Firestore</strong> and linked to your account</li>
+    </ul>
+
+    <h3>AI-related content</h3>
+    <p>Messages you send to the AI guide are sent to <strong>Google Gemini</strong> to generate a reply. <strong>We do not store those messages on AURA’s servers</strong>; they are not kept in our systems after processing.</p>
+
+    <h3>Data stored only on your device</h3>
+    <div class="callout">
+      <strong>Dream journal entries and reflection notes stay only on your device.</strong> They are not uploaded to our servers and are not stored in the cloud. If you delete the app or clear app data, those records are removed from the device (and cannot be recovered unless you backed them up yourself).
+    </div>
+
+    <h2>3. How We Use Your Data</h2>
+    <p>We use data to run your account, operate and improve the app, personalize features, protect security, fix crashes, meet legal obligations, and send notifications when you allow it. We do not use health data for diagnosis or treatment; AURA is not a medical device.</p>
+
+    <h2>4. Third Parties</h2>
+    <p>Trusted providers may process limited data on our behalf:</p>
+    <ul>
+      <li><strong>Google Firebase</strong> — Authentication, Firestore, Analytics, Crashlytics</li>
+      <li><strong>Google Maps / Places API</strong> — location-based features</li>
+      <li><strong>Google Gemini AI</strong> — AI guide responses (your messages are sent to Google for this processing)</li>
+      <li><strong>Apple HealthKit</strong> / <strong>Google Health Connect</strong> — only as permitted by you</li>
+    </ul>
+    <p>Their own privacy policies also apply.</p>
+
+    <h2>5. We Don’t Sell Your Data</h2>
+    <div class="highlight">
+      <strong>We don’t sell your personal information</strong>
+      <span>We do not sell your personal data to advertisers or data brokers, and we do not exchange it for money in ways that qualify as a “sale” under applicable privacy laws.</span>
+    </div>
+
+    <h2>6. Health Data Sensitivity</h2>
+    <p>Health and activity data is sensitive. We access it only with your permission, and you can withdraw that permission or disconnect integrations at any time. We use it only to power in-app experiences—not as a substitute for a doctor or emergency services.</p>
+
+    <h2>7. Children’s Privacy</h2>
+    <p>AURA is not designed to knowingly collect personal information from children under 13. If you believe we have received such data, please contact us.</p>
+
+    <h2>8. Your Rights</h2>
+    <p>Depending on where you live, you may have the right to:</p>
+    <ul>
+      <li><strong>Access</strong> information about data we hold</li>
+      <li><strong>Correct</strong> inaccurate or incomplete data</li>
+      <li><strong>Delete</strong> your account and related cloud data (such as scores in Firestore)</li>
+    </ul>
+    <p>Contact: <a href="mailto:support@gezegenselcore.com">support@gezegenselcore.com</a></p>
+    <p>Dream journal and reflection notes live on your device, so removing them is usually done in the app or device settings.</p>
+
+    <h2>9. Security</h2>
+    <p>We use widely accepted technical and organizational measures to protect data. No mobile or internet service is 100% secure; reach out if you have concerns.</p>
+
+    <h2>10. Changes</h2>
+    <p>We may update this policy from time to time. For material changes, we may notify you in the app or by email. The “Last updated” date at the top will change when we revise the policy.</p>
+
+    <h2>11. Contact</h2>
+    <p><strong>GezegenselCore</strong> — <a href="mailto:support@gezegenselcore.com">support@gezegenselcore.com</a></p>
+  </article>
+
+  <script>
+    (function () {
+      var tr = document.getElementById("content-tr");
+      var en = document.getElementById("content-en");
+      var btnTr = document.getElementById("btn-tr");
+      var btnEn = document.getElementById("btn-en");
+
+      function setLang(lang) {
+        var isTr = lang === "tr";
+        tr.hidden = !isTr;
+        en.hidden = isTr;
+        btnTr.setAttribute("aria-pressed", isTr ? "true" : "false");
+        btnEn.setAttribute("aria-pressed", isTr ? "false" : "true");
+        document.documentElement.lang = isTr ? "tr" : "en";
+        document.title = isTr
+          ? "AURA — Gizlilik Politikası / Privacy Policy | GezegenselCore"
+          : "AURA — Privacy Policy / Gizlilik Politikası | GezegenselCore";
+      }
+
+      btnTr.addEventListener("click", function () { setLang("tr"); });
+      btnEn.addEventListener("click", function () { setLang("en"); });
+    })();
+  </script>
+</body>
+</html>
