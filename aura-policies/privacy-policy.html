@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AURA — Gizlilik Politikası / Privacy Policy | GezegenselCore</title>
-  <meta name="description" content="AURA mobil uygulaması gizlilik politikası — Türkçe ve English" />
+  <title>AURA — Privacy Policy | GezegenselCore</title>
+  <meta name="description" content="AURA app privacy policy — English and Türkçe. GezegenselCore." />
   <style>
     :root {
       --bg: #fafafa;
@@ -77,12 +77,12 @@
   </style>
 </head>
 <body>
-  <div class="switcher" role="group" aria-label="Dil seçimi / Language">
-    <button type="button" id="btn-tr" aria-pressed="true">🇹🇷 Türkçe</button>
-    <button type="button" id="btn-en" aria-pressed="false">🇬🇧 English</button>
+  <div class="switcher" role="group" aria-label="Language">
+    <button type="button" id="btn-tr" aria-pressed="false">🇹🇷 Türkçe</button>
+    <button type="button" id="btn-en" aria-pressed="true">🇬🇧 English</button>
   </div>
 
-  <article id="content-tr" lang="tr">
+  <article id="content-tr" lang="tr" hidden>
     <h1>AURA — Gizlilik Politikası</h1>
     <p class="meta"><strong>Son güncelleme:</strong> 5 Nisan 2026 · <strong>Geliştirici:</strong> GezegenselCore · <a href="mailto:support@gezegenselcore.com">support@gezegenselcore.com</a> · iOS ve Android</p>
 
@@ -164,7 +164,7 @@
     <p><strong>GezegenselCore</strong> — <a href="mailto:support@gezegenselcore.com">support@gezegenselcore.com</a></p>
   </article>
 
-  <article id="content-en" lang="en" hidden>
+  <article id="content-en" lang="en">
     <h1>AURA — Privacy Policy</h1>
     <p class="meta"><strong>Last updated:</strong> April 5, 2026 · <strong>Developer:</strong> GezegenselCore · <a href="mailto:support@gezegenselcore.com">support@gezegenselcore.com</a> · iOS and Android</p>
 
@@ -253,6 +253,8 @@
       var btnTr = document.getElementById("btn-tr");
       var btnEn = document.getElementById("btn-en");
 
+      var storageKey = "aura-privacy-lang";
+
       function setLang(lang) {
         var isTr = lang === "tr";
         tr.hidden = !isTr;
@@ -261,12 +263,26 @@
         btnEn.setAttribute("aria-pressed", isTr ? "false" : "true");
         document.documentElement.lang = isTr ? "tr" : "en";
         document.title = isTr
-          ? "AURA — Gizlilik Politikası / Privacy Policy | GezegenselCore"
-          : "AURA — Privacy Policy / Gizlilik Politikası | GezegenselCore";
+          ? "AURA — Gizlilik Politikası | GezegenselCore"
+          : "AURA — Privacy Policy | GezegenselCore";
+        try {
+          localStorage.setItem(storageKey, lang);
+        } catch (e) {}
+      }
+
+      function initialLang() {
+        try {
+          var saved = localStorage.getItem(storageKey);
+          if (saved === "tr" || saved === "en") return saved;
+        } catch (e) {}
+        var nav = (navigator.language || navigator.userLanguage || "").toLowerCase();
+        if (nav.indexOf("tr") === 0) return "tr";
+        return "en";
       }
 
       btnTr.addEventListener("click", function () { setLang("tr"); });
       btnEn.addEventListener("click", function () { setLang("en"); });
+      setLang(initialLang());
     })();
   </script>
 </body>
