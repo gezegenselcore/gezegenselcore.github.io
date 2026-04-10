@@ -5,8 +5,7 @@ Statik HTML, GitHub Pages (`CNAME` → özel alan). Dosya haritası: **`SITE_STR
 
 ## Tema ve dil
 
-- **Tema:** Jekyll vitrin projesindeki Freelancer-türevi palet — elektrik mavisi **#00f2fe** + lacivert **#0d2137** (`gezegensel-core-site` içindeki `_config.yml` `color` ile uyumlu).
-- **CSS / JS:** `assets/gezegensel.css`, `assets/lang-boot.js`, `assets/gezegensel.js`.
+- **Tema:** `Theme/freelancer-theme-master` zip’inden `assets/freelancer/`; renkler marka paletiyle (`#00f2fe` / `#0d2137`). Üstine `assets/gezegensel.css` + `assets/lang-boot.js` + `assets/gezegensel.js`.
 - **TR | EN:** Varsayılan dil = tarayıcı (`navigator.languages`, `tr` önekli → Türkçe). Kullanıcı TR/EN butonuna bastığında tercih `localStorage` (`gezegensel-lang`) ile saklanır.
 
 ## GitHub repo ve deploy

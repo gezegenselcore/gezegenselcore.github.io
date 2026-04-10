@@ -1,6 +1,6 @@
 # gezegenselcore.com — dosya haritası
 
-**Tema:** Aura monorepo içindeki Jekyll vitrin teması (`gezegensel-core-site/freelancer-theme-master/_config.yml`) ile aynı renk paleti — `primary` **#00f2fe**, `secondary` **#0d2137**. Uygulama: `assets/gezegensel.css` (Montserrat + Open Sans).
+**Tema:** `D:\GezegenselCore\Theme` altındaki **Freelancer (Jekyll)** zip’inden derlenen statik varlıklar — `assets/freelancer/` (`bootstrap.min.css`, `css/main.css`, `js/*`, `img/*`, Font Awesome). Renkler zip yerine marka paleti: `primary` **#00f2fe**, `secondary` **#0d2137** (`main.css` içinde liquid yerine sabitlenmiş). Üzerine ince katman: `assets/gezegensel.css` (TR/EN, dil düğmeleri, iç sayfa metinleri).
 
 **Dil:** `assets/lang-boot.js` (senkron, ilk boyamadan önce) + `assets/gezegensel.js` (TR/EN düğmeleri, `localStorage` anahtarı `gezegensel-lang`). Tarayıcı `navigator.languages` içinde `tr*` → Türkçe; aksi İngilizce.
 
@@ -10,7 +10,8 @@
 |----------------|----------|
 | `index.html` | Ana sayfa |
 | `privacy.html`, `support.html` | Site gizlilik / destek |
-| `assets/gezegensel.css` | Ortak tema |
+| `assets/freelancer/` | Freelancer zip’ten kopyalanan CSS/JS/img/FA |
+| `assets/gezegensel.css` | Dil / `#content-tr`·`#content-en` / iç sayfa ince ayar |
 | `assets/gezegensel.js` | Dil seçici + başlık senkronu |
 | `assets/lang-boot.js` | Erken `html[lang]` |
 | `CNAME` | `gezegenselcore.com` |
@@ -19,7 +20,7 @@
 
 ## `pages/aura/` · `pages/refollow/`
 
-Uygulama HTML’leri; üst şerit `gc-nav`, stil `../../../assets/gezegensel.css` (derinliğe göre).
+Uygulama HTML’leri; **Bootstrap 3** üst çubuk (`navbar`), Freelancer bölümleri + footer. Derinliğe göre `../../../assets/freelancer/…` ve `../../../assets/gezegensel.css` (`pages/*/policies/`); `pages/aura/support.html` için `../../assets/…`.
 
 ## Yayın (GitHub Pages)
 
