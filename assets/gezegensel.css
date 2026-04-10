@@ -34,9 +34,12 @@ html {
 .gc-about-prose {
   text-align: center;
   max-width: 44rem;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding: 8px 12px 24px;
+  float: none;
+  box-sizing: border-box;
 }
 /* Tüm gövde metni aynı font (Lato, tema ile uyumlu) ve aynı punto — H2'ye dokunulmaz */
 .gc-about-prose p {
@@ -346,6 +349,18 @@ header .gc-hero-icon {
   border-radius: 22px;
   object-fit: cover;
   box-shadow: 0 6px 20px rgba(13, 33, 55, 0.12);
+}
+/* Yalnız Uygulamalar bölümündeki ReFollow — btn-lg’ye göre ~yarı boyut */
+#apps .gc-refollow-apps-play.btn {
+  font-size: 9px;
+  padding: 5px 10px;
+  line-height: 1.35;
+  border-radius: 4px;
+}
+#apps .gc-refollow-apps-play .fa-google-play {
+  margin-right: 4px;
+  font-size: 11px;
+  vertical-align: middle;
 }
 .gc-play-btn .fa-google-play {
   margin-right: 6px;
