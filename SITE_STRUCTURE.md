@@ -8,7 +8,7 @@
 
 | Dosya / klasör | Açıklama |
 |----------------|----------|
-| `index.html` | Ana sayfa |
+| `index.html` | Ana sayfa (`#about` stüdyo metni, `#apps`, `#policies`) |
 | `privacy.html`, `support.html` | Site gizlilik / destek |
 | `assets/freelancer/` | Freelancer zip’ten kopyalanan CSS/JS/img/FA |
 | `assets/icons/` | `Theme/icons` kaynaklı uygulama ve marka görselleri (deploy için burada tutulur) |

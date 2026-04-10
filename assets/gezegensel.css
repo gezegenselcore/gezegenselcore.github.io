@@ -13,15 +13,47 @@ html {
   }
 }
 
+.index #about,
 .index #apps,
 .index #policies {
   scroll-margin-top: 88px;
 }
 @media (min-width: 768px) {
+  .index #about,
   .index #apps,
   .index #policies {
     scroll-margin-top: 96px;
   }
+}
+
+/* Ana sayfa Hakkında */
+.gc-about-prose {
+  text-align: left;
+}
+.gc-about-prose .lead {
+  font-size: 1.2rem;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+.gc-about-prose h3 {
+  margin-top: 1.75rem;
+  margin-bottom: 1rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-transform: none;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #0d2137;
+}
+.gc-about-prose p {
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Footer: alan adı tek parça, satır kırılmasın */
+.gc-footer-domain {
+  white-space: nowrap;
+  word-break: keep-all;
 }
 
 /* Küçüldüğünde opak zemin — içerik “üst üste biniyor” hissi azalır */
