@@ -1,7 +1,40 @@
 /*!
- * GezegenselCore — Freelancer zip teması üzerine: TR/EN + okunabilirlik + iç sayfa
+ * Gezegensel Core — Freelancer zip teması üzerine: TR/EN + okunabilirlik + iç sayfa
  * Asıl tema: assets/freelancer/css/{bootstrap.min.css, main.css}
  */
+
+/* Sabit navbar + #hedef: başlık menünün altında kalkmasın */
+html {
+  scroll-padding-top: 88px;
+}
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 96px;
+  }
+}
+
+.index #apps,
+.index #policies {
+  scroll-margin-top: 88px;
+}
+@media (min-width: 768px) {
+  .index #apps,
+  .index #policies {
+    scroll-margin-top: 96px;
+  }
+}
+
+/* Küçüldüğünde opak zemin — içerik “üst üste biniyor” hissi azalır */
+.navbar-default.navbar-fixed-top.navbar-shrink {
+  background-color: #fff !important;
+  box-shadow: 0 2px 12px rgba(13, 33, 55, 0.1);
+}
+.index .navbar-default.navbar-fixed-top:not(.navbar-shrink) {
+  background-color: rgba(255, 255, 255, 0.92);
+}
+.inner-page .navbar-default.navbar-fixed-top {
+  background-color: rgba(255, 255, 255, 0.97);
+}
 html[lang="tr"] .l10n-en,
 html[lang="tr"] .policy-locale-en {
   display: none !important;
@@ -166,6 +199,14 @@ section.first {
 }
 
 /* Ana sayfa kahraman görseli (Theme/icons) */
+/* İki kelimelik marka: dar ekranda satır kırılsın, üst üste binmesin */
+header .intro-text .name {
+  white-space: normal !important;
+  line-height: 1.08 !important;
+  padding: 0 0.35em;
+  box-sizing: border-box;
+}
+
 header .gc-hero-icon {
   max-width: 220px;
   max-height: 220px;
@@ -177,9 +218,18 @@ header .gc-hero-icon {
   box-shadow: 0 14px 40px rgba(13, 33, 55, 0.22);
 }
 
-/* Uygulama kartları (#apps) */
+/* Uygulama kartları (#apps) — kartlar sütun içinde ortada */
 .gc-app-row {
   margin-top: 8px;
+}
+#apps .gc-app-col {
+  text-align: center;
+}
+#apps .gc-app-card {
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 .gc-app-card {
   text-align: center;
@@ -287,6 +337,11 @@ section.success code {
 .gc-policy-card .panel-footer {
   background: #fff !important;
   border-top: 1px solid rgba(13, 33, 55, 0.08) !important;
+  text-align: center !important;
+}
+.gc-policy-card .panel-footer .btn {
+  float: none !important;
+  display: inline-block;
 }
 .gc-policies-email {
   text-align: center;

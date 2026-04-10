@@ -8,8 +8,18 @@
 $(function() {
     $('.page-scroll a').bind('click', function(event) {
         var $anchor = $(this);
+        var href = $anchor.attr('href');
+        if (!href || href.charAt(0) !== '#') {
+            return;
+        }
+        var $target = $(href);
+        if (!$target.length) {
+            return;
+        }
+        var navH = $('.navbar-fixed-top').outerHeight() || 72;
+        var pad = 12;
         $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
+            scrollTop: Math.max(0, $target.offset().top - navH + pad)
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
     });
@@ -28,7 +38,8 @@ $(function() {
 
 // Highlight the top nav as scrolling occurs
 $('body').scrollspy({
-    target: '.navbar-fixed-top'
+    target: '.navbar-fixed-top',
+    offset: 88
 })
 
 // Closes the Responsive Menu on Menu Item Click

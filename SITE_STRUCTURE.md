@@ -21,7 +21,7 @@
 
 ## `pages/aura/` · `pages/refollow/`
 
-Uygulama HTML’leri; **Bootstrap 3** üst çubuk (`navbar`), sol üst marka metni her zaman **GezegenselCore** → kök `index.html`. Freelancer bölümleri + footer. Varlıklar: `../../../assets/freelancer/…`, `../../../assets/icons/…`, `../../../assets/gezegensel.css` (`pages/*/policies/`); `pages/aura/support.html` için `../../assets/…`.
+Uygulama HTML’leri; **Bootstrap 3** üst çubuk (`navbar`), sol üst görünen marka **Gezegensel Core** (boşluklu) → kök `index.html`. Adres ve e-posta birleşik `gezegenselcore.com` / `support@gezegenselcore.com`. Freelancer bölümleri + footer. Varlıklar: `../../../assets/freelancer/…`, `../../../assets/icons/…`, `../../../assets/gezegensel.css` (`pages/*/policies/`); `pages/aura/support.html` için `../../assets/…`.
 
 ## Yayın (GitHub Pages)
 
