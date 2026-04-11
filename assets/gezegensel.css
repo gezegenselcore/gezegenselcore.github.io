@@ -247,6 +247,28 @@ section.first {
   padding-top: 120px;
 }
 
+/* İç sayfalar — turkuaz başlık alanı: sol üstten ana sayfa */
+.gc-home-bar {
+  margin: 0 0 6px;
+  text-align: left;
+}
+.gc-home-link {
+  display: inline-block;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  color: #0d2137 !important;
+  text-decoration: none !important;
+  padding: 4px 0 12px;
+  line-height: 1.25;
+}
+.inner-page section.success.first .gc-home-link:hover,
+.inner-page section.success.first .gc-home-link:focus {
+  text-decoration: underline !important;
+  color: #081525 !important;
+}
+
 @media (max-width: 767px) {
   .gc-lang-group {
     margin-top: 0;
@@ -274,6 +296,17 @@ section.first {
 .inner-page .navbar-default .gc-lang-btn {
   border-color: rgba(13, 33, 55, 0.45) !important;
   color: #0d2137 !important;
+}
+
+/* Sol üst marka: ana sayfaya dönüş — her zaman net tıklanabilir */
+.inner-page .navbar-default .navbar-brand {
+  cursor: pointer;
+  text-decoration: none;
+}
+.inner-page .navbar-default .navbar-brand:hover,
+.inner-page .navbar-default .navbar-brand:focus {
+  text-decoration: underline;
+  color: #0a1628 !important;
 }
 
 /* Ana sayfa kahraman görseli (Theme/icons) */
