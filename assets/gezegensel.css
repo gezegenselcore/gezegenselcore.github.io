@@ -291,6 +291,13 @@ section.first {
   outline-offset: 3px;
 }
 
+/* Ana sayfa: Politikalar (#policies) hedefliyken sol üst navbar markası (o ekrandaki GEZEGENSEL CORE) */
+@supports selector(:has(*)) {
+  body.index:has(#policies:target) .navbar-default .navbar-brand {
+    display: none !important;
+  }
+}
+
 @media (max-width: 767px) {
   .gc-lang-group {
     margin-top: 0;
