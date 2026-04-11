@@ -1,0 +1,8 @@
+# https://gezegenselcore.com
+User-agent: *
+Allow: /
+
+# Tema kaynak arşivi — kullanıcıya yönelik sayfa değil
+Disallow: /Theme/
+
+Sitemap: https://gezegenselcore.com/sitemap.xml
