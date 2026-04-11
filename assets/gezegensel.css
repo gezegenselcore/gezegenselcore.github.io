@@ -276,17 +276,6 @@ section.first {
   color: #0d2137 !important;
 }
 
-/* Sol üst marka: ana sayfaya dönüş — her zaman net tıklanabilir */
-.inner-page .navbar-default .navbar-brand {
-  cursor: pointer;
-  text-decoration: none;
-}
-.inner-page .navbar-default .navbar-brand:hover,
-.inner-page .navbar-default .navbar-brand:focus {
-  text-decoration: underline;
-  color: #0a1628 !important;
-}
-
 /* Ana sayfa kahraman görseli (Theme/icons) */
 /* İki kelimelik marka: dar ekranda satır kırılsın, üst üste binmesin */
 header .intro-text .name {
