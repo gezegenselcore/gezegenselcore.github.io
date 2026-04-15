@@ -327,6 +327,30 @@ section.first {
   color: #0d2137 !important;
 }
 
+/*
+ * İç sayfalar (support, privacy, pages/aura/…): navbar zemini açık / yarı saydam beyaz.
+ * Freelancer + scroll öncesi durumda bağlantılar açık gri veya tema varsayılanıyla kaybolabiliyor;
+ * marka ve menüyü her zaman koyu renkte tut.
+ */
+.inner-page .navbar-default .navbar-brand,
+.inner-page .navbar-default .navbar-nav > li > a {
+  color: #0d2137 !important;
+}
+.inner-page .navbar-default.navbar-shrink .navbar-brand,
+.inner-page .navbar-default.navbar-shrink .navbar-nav > li > a {
+  color: #0d2137 !important;
+}
+.inner-page .navbar-default .navbar-nav > li > a:hover,
+.inner-page .navbar-default .navbar-nav > li > a:focus {
+  color: #061018 !important;
+}
+.inner-page .navbar-default .navbar-toggle {
+  border-color: rgba(13, 33, 55, 0.35);
+}
+.inner-page .navbar-default .navbar-toggle .icon-bar {
+  background-color: #0d2137;
+}
+
 /* Sol üst marka: ana sayfaya dönüş — her zaman net tıklanabilir */
 .inner-page .navbar-default .navbar-brand {
   cursor: pointer;
