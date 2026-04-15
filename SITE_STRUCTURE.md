@@ -19,6 +19,12 @@
 | `app-ads.txt` | Reklam doğrulama |
 | `README.md` | Repo + GitHub Pages notları |
 
+## `aura/` (AURA — mağaza kamu URL)
+
+| Dosya | Canlı URL | Not |
+|-------|-----------|-----|
+| `aura/privacy-policy.html` | `https://gezegenselcore.com/aura/privacy-policy.html` | Google Play gizlilik + hesap silme (`#account-deletion`) için **tercih edilen** adres. İçerik `pages/aura/policies/privacy-policy.html` ile aynı; varlık yolları `../assets/…`, destek/özet linkleri `../pages/aura/…`. Güncelleme: önce `pages/…` düzenlenir, sonra aynı dosyadan kopyalanıp yollar değiştirilir (veya betik). |
+
 ## `pages/aura/` · `pages/refollow/`
 
 Uygulama HTML’leri; **Bootstrap 3** üst çubuk (`navbar`), sol üst görünen marka **Gezegensel Core** (boşluklu) → kök `index.html`. Adres ve e-posta birleşik `gezegenselcore.com` / `support@gezegenselcore.com`. Freelancer bölümleri + footer. Varlıklar: `../../../assets/freelancer/…`, `../../../assets/icons/…`, `../../../assets/gezegensel.css` (`pages/*/policies/`); `pages/aura/support.html` için `../../assets/…`.
@@ -27,4 +33,4 @@ Uygulama HTML’leri; **Bootstrap 3** üst çubuk (`navbar`), sol üst görünen
 
 Kaynak repo ör. `gezegenselcore/gezegenselcore.github.io` — `main` kökten yayın; `CNAME` özel alanı işaret eder. Push sonrası birkaç dakika içinde `https://gezegenselcore.com` güncellenir.
 
-Son güncelleme: 2026-04-10
+Son güncelleme: 2026-04-16

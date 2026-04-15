@@ -48,11 +48,31 @@
     }
   }
 
+  function scrollToAccountDeletionSection() {
+    var raw = (typeof location !== "undefined" && location.hash) || "";
+    if (raw.replace(/^#/, "") !== "account-deletion") return;
+    var lang = document.documentElement.lang || "en";
+    var el =
+      lang === "tr"
+        ? document.getElementById("account-deletion")
+        : document.querySelector("#content-en .gc-account-deletion-heading");
+    if (!el) return;
+    window.requestAnimationFrame(function () {
+      try {
+        el.scrollIntoView({ block: "start", behavior: "auto" });
+      } catch (e) {
+        el.scrollIntoView(true);
+      }
+    });
+  }
+
   function onReady() {
     applyLang(detect());
+    scrollToAccountDeletionSection();
     document.querySelectorAll(".gc-lang-btn").forEach(function (btn) {
       btn.addEventListener("click", function () {
         applyLang(btn.getAttribute("data-lang") || "en");
+        scrollToAccountDeletionSection();
       });
     });
     var legacyTr = document.getElementById("btn-tr");
@@ -60,11 +80,13 @@
     if (legacyTr) {
       legacyTr.addEventListener("click", function () {
         applyLang("tr");
+        scrollToAccountDeletionSection();
       });
     }
     if (legacyEn) {
       legacyEn.addEventListener("click", function () {
         applyLang("en");
+        scrollToAccountDeletionSection();
       });
     }
   }

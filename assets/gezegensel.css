@@ -680,6 +680,12 @@ section.success code {
   }
 }
 
+/* Play / mağaza #account-deletion — sabit üst çubuk altında kaydırma */
+.gc-prose.gc-legal #account-deletion,
+.gc-prose.gc-legal .gc-account-deletion-heading {
+  scroll-margin-top: 5.5rem;
+}
+
 /* Destek: bölüm başlıkları ve link şeridi */
 .gc-prose .gc-support-lead {
   display: flex;
