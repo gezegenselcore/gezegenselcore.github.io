@@ -31,6 +31,6 @@ Push’tan sonra CDN önbelleği nedeniyle tema/dil değişikliği **birkaç dak
 | AURA (dosya yolu, politikalar klasörü) | `/pages/aura/…` |
 | ReFollow | `/pages/refollow/…` |
 
-**Policy senkronu:** Aura mobil repodaki `legal-public/aura/*.html` hukuki gövde kaynağıdır. Burada yayımlanırken **Freelancer + `gezegensel.css`** şablonu (`aura/privacy-policy.html`, `aura/terms-of-use.html`) korunur; `pages/aura/policies/privacy-policy.html` gizlilik gövdesi `aura/` ile aynı kalır. Koşullar özeti `pages/aura/policies/terms.html` → tam metin `aura/terms-of-use.html`. Ayrıntı: `SITE_STRUCTURE.md`.
+**Policy senkronu:** Aura mobil repodaki `legal-public/aura/*.html` hukuki gövde kaynağıdır. Burada yayımlanırken **Freelancer + `gezegensel.css`** şablonu (`aura/privacy-policy.html`, `aura/terms-of-use.html`) korunur; `pages/aura/policies/privacy-policy.html` gizlilik gövdesi `aura/` ile aynı kalır (TR/EN `article`, 1–13; `#account-deletion` TR §12). Koşullar özeti `pages/aura/policies/terms.html` → tam metin `aura/terms-of-use.html`. Ayrıntı: `SITE_STRUCTURE.md`.
 
 Son güncelleme: 2026-04-16
