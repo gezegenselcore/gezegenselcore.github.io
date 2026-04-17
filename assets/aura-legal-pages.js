@@ -49,6 +49,12 @@
     try {
       var s = normalizeFromStorage(localStorage.getItem(STORAGE_KEY));
       if (s) return s;
+      var legacy = normalizeFromStorage(localStorage.getItem("aura-public-lang"));
+      if (legacy) {
+        localStorage.setItem(STORAGE_KEY, legacy);
+        localStorage.removeItem("aura-public-lang");
+        return legacy;
+      }
     } catch (e) {}
     return mapNavigatorToLocale();
   }
