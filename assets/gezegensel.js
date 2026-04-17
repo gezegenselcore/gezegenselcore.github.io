@@ -1,6 +1,6 @@
 /**
  * GezegenselCore statik site — dil: navigator.language + localStorage (gezegensel-lang)
- * AURA privacy-policy: #content-tr / #content-en ile senkron
+ * AURA kanonik hukuk sayfaları `/aura/*.html` gömülü CSS ile ayrıdır; bu betik kök / Bootstrap sayfaları için dil seçicidir.
  */
 (function () {
   var STORAGE_KEY = "gezegensel-lang";

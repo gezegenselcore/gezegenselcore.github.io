@@ -3,6 +3,8 @@
 **Canlı:** [https://gezegenselcore.com](https://gezegenselcore.com)  
 Statik HTML, GitHub Pages (`CNAME` → özel alan). Dosya haritası: **`SITE_STRUCTURE.md`**.
 
+**AURA legal URLs:** Only canonical paths are used: `/aura/privacy-policy.html`, `/aura/terms-of-use.html`, `/pages/aura/support.html`. Legacy `/pages/aura/policies/*` HTML files are redirects only (no duplicate legal body).
+
 ## Tema ve dil
 
 - **Tema:** `Theme/freelancer-theme-master` zip’inden `assets/freelancer/`; renkler marka paletiyle (`#00f2fe` / `#0d2137`). Üstine `assets/gezegensel.css` + `assets/lang-boot.js` + `assets/gezegensel.js`.
@@ -28,10 +30,9 @@ Push’tan sonra CDN önbelleği nedeniyle tema/dil değişikliği **birkaç dak
 | Site gizlilik / destek | `/privacy.html`, `/support.html` |
 | AURA gizlilik (Play / kamu) | **`/aura/privacy-policy.html`** (`#account-deletion`) — kanonik tam metin; eski `pages/aura/policies/*` yolları yönlendirme |
 | AURA kullanım koşulları (Play / kamu) | **`/aura/terms-of-use.html`** |
-| AURA destek | **`/pages/aura/support.html`** — üstte yalnız Gizlilik · Koşullar · iletişim bağlantıları |
-| AURA (dosya yolu, politikalar klasörü) | `/pages/aura/…` |
+| AURA destek | **`/pages/aura/support.html`** — kanonik destek metni (TR + EN) |
 | ReFollow | `/pages/refollow/…` |
 
-**Policy senkronu:** Aura mobil repodaki `legal-public/aura/*.html` ile `aura/privacy-policy.html` ve `aura/terms-of-use.html` **dosya olarak eşlenir** (push öncesi kopyalanır). `pages/aura/policies/privacy-policy.html`, `privacy.html`, `terms.html` eski bağlantılar için **kanonik URL’ye yönlendirme** içerir. Ayrıntı: `SITE_STRUCTURE.md`.
+**Policy senkronu:** Aura mobil repodaki `legal-public/aura/*.html` dosyaları sırasıyla `aura/privacy-policy.html`, `aura/terms-of-use.html`, `pages/aura/support.html` ile **aynı içerikte** tutulur (push öncesi kopyalanır). `pages/aura/policies/*.html` yalnızca eski bağlantılar için **kanonik URL’ye yönlendirme** stub’ıdır. Ayrıntı: `SITE_STRUCTURE.md`.
 
 Son güncelleme: 2026-04-18

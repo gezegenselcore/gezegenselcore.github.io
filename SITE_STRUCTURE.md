@@ -1,5 +1,9 @@
 # gezegenselcore.com — dosya haritası
 
+**AURA public legal — tek kaynak (canonical):** Yalnız şu üç URL tam hukuki / destek metnini taşır: `/aura/privacy-policy.html`, `/aura/terms-of-use.html`, `/pages/aura/support.html`. Başka bir yolda AURA hukuk gövdesi yoktur.
+
+**English:** Only these canonical legal URLs are used. Legacy paths under `/pages/aura/policies/` are redirect stubs (meta refresh + click-through link); they do not duplicate policy text.
+
 **Tema:** `D:\GezegenselCore\Theme` altındaki **Freelancer (Jekyll)** zip’inden derlenen statik varlıklar — `assets/freelancer/` (`bootstrap.min.css`, `css/main.css`, `js/*`, `img/*`, Font Awesome). Renkler zip yerine marka paleti: `primary` **#00f2fe**, `secondary` **#0d2137** (`main.css` içinde liquid yerine sabitlenmiş). Üzerine ince katman: `assets/gezegensel.css` (TR/EN, dil düğmeleri, iç sayfa metinleri).
 
 **Dil:** `assets/lang-boot.js` (senkron, ilk boyamadan önce) + `assets/gezegensel.js` (TR/EN düğmeleri, `localStorage` anahtarı `gezegensel-lang`). Tarayıcı `navigator.languages` içinde `tr*` → Türkçe; aksi İngilizce.
@@ -23,12 +27,19 @@
 
 | Dosya | Canlı URL | Not |
 |-------|-----------|-----|
-| `aura/privacy-policy.html` | `https://gezegenselcore.com/aura/privacy-policy.html` | Google Play gizlilik + hesap silme (**`#account-deletion`**, TR §12) için **kanonik** adres. **Gövde:** Aura repodaki `legal-public/aura/privacy-policy.html` ile aynı tam metin (TR + EN, tek sayfa, gömülü sade CSS). Eski yol `pages/aura/policies/privacy-policy.html` → buraya yönlendirilir. |
-| `aura/terms-of-use.html` | `https://gezegenselcore.com/aura/terms-of-use.html` | Kamu **Kullanım Koşulları** (TR + EN). Aura `legal-public/aura/terms-of-use.html` ile senkron. Eski özet yolu `pages/aura/policies/terms.html` → buraya yönlendirilir. |
+| `aura/privacy-policy.html` | `https://gezegenselcore.com/aura/privacy-policy.html` | Google Play gizlilik + hesap silme (**`#account-deletion`**, TR §12) için **kanonik** adres. **Gövde:** Aura repodaki `legal-public/aura/privacy-policy.html` ile aynı tam metin (TR + EN, tek sayfa, gömülü sade CSS). |
+| `aura/terms-of-use.html` | `https://gezegenselcore.com/aura/terms-of-use.html` | Kamu **Kullanım Koşulları** (TR + EN). Aura `legal-public/aura/terms-of-use.html` ile senkron. |
 
-## `pages/aura/` · `pages/refollow/`
+## `pages/aura/`
 
-Uygulama HTML’leri; **Bootstrap 3** üst çubuk (`navbar`), sol üst görünen marka **Gezegensel Core** (boşluklu) → kök `index.html`. Adres ve e-posta birleşik `gezegenselcore.com` / `support@gezegenselcore.com`. Freelancer bölümleri + footer. Varlıklar: `../../../assets/freelancer/…`, `../../../assets/icons/…`, `../../../assets/gezegensel.css` (`pages/*/policies/`); `pages/aura/support.html` için `../../assets/…`.
+| Dosya | Canlı URL | Not |
+|-------|-----------|-----|
+| `pages/aura/support.html` | `https://gezegenselcore.com/pages/aura/support.html` | AURA **destek** tam metni (TR + EN, gömülü sade CSS). Kanonik; Aura `legal-public/aura/support.html` ile senkron. |
+| `pages/aura/policies/*.html` | `/pages/aura/policies/…` | Yalnızca **yönlendirme stub** (`meta refresh` + tıklanabilir link). Hukuki gövde yok; kanonik `/aura/*.html`. Açıklama: `pages/aura/policies/README.md`. |
+
+## `pages/refollow/`
+
+Uygulama HTML’leri; **Bootstrap 3** üst çubuk (`navbar`), sol üst görünen marka **Gezegensel Core** (boşluklu) → kök `index.html`. ReFollow politika sayfaları bu klasörde. Varlıklar: `../../../assets/freelancer/…`, `../../../assets/icons/…`, `../../../assets/gezegensel.css`.
 
 ## Yayın (GitHub Pages)
 

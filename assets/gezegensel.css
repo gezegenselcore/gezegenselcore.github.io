@@ -684,7 +684,7 @@ section.success code {
   color: #0f766e;
 }
 
-/* Tam hukuki metin (AURA privacy-policy): kart + dar ölçü */
+/* Eski Bootstrap gövdeli hukuk düzeni (referans); kanonik AURA metinleri /aura/*.html içinde gömülü CSS */
 .gc-prose.gc-legal {
   max-width: 40rem;
 }
