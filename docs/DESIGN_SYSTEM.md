@@ -37,6 +37,13 @@ Yükleme sırası (tipik): `bootstrap` → `main.css` → `gezegensel.css` → *
 | `--gc-prose-note-bg`, `--gc-prose-note-border` | Alıntı / not kutusu. |
 | `--gc-border-subtle`, `--gc-border-strong` | Ayırıcılar. |
 
+## Katmanlama (mobil / kaydırma)
+
+- **Navbar** üstte opak beyaz zemin (`gezegensel.css`); yarı saydam bar kaydırırken metnin “soluk üst katman” altında kalması hissi oluşturmaz.
+- **`main.gc-main`**: `position: relative`, `z-index: 0`, `isolation: isolate` — gövde kendi stacking bağlamında; hero gradient’i alt bölümlerin üstüne “sızmasın”.
+- **`header` / `section.success`**: `position: relative`, `isolation: isolate` — hero boyası kutuya sıkısın.
+- **Freelancer `#portfolio * { z-index: 2 }`** kaldırıldı; yalnızca `.caption` overlay’inde `z-index` (yanlış global stacking önlendi).
+
 ## Bileşen davranışı
 
 - **Primary CTA** (`.btn.gc-btn-solid`): `min-height: 44px`, net gölge, `:focus-visible` halkası; renkler jetondan.

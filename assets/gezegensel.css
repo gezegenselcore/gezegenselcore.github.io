@@ -107,11 +107,14 @@ html {
   background-color: #fff !important;
   box-shadow: 0 2px 12px rgba(13, 33, 55, 0.1);
 }
+/* Opak navbar: mobilde kaydırırken içerik yarı saydam bar altında “kayboluyor” hissi oluşmasın */
 .index .navbar-default.navbar-fixed-top:not(.navbar-shrink) {
-  background-color: rgba(255, 255, 255, 0.92);
+  background-color: #ffffff !important;
+  box-shadow: 0 1px 0 rgba(10, 22, 40, 0.06), 0 4px 14px rgba(10, 22, 40, 0.06);
 }
 .inner-page .navbar-default.navbar-fixed-top {
-  background-color: rgba(255, 255, 255, 0.97);
+  background-color: #ffffff !important;
+  box-shadow: 0 1px 0 rgba(10, 22, 40, 0.06), 0 4px 14px rgba(10, 22, 40, 0.06);
 }
 
 /* Marka adı: büyük harf satırı ile aynı harf aralığı */
