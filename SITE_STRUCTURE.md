@@ -18,7 +18,8 @@
 | `assets/icons/` | `Theme/icons` kaynaklı uygulama ve marka görselleri (deploy için burada tutulur) |
 | `assets/gezegensel.css` | Dil / `#content-tr`·`#content-en` / iç sayfa ince ayar |
 | `assets/gezegensel.js` | Dil seçici + başlık senkronu |
-| `assets/lang-boot.js` | Erken `html[lang]` |
+| `assets/lang-boot.js` | Erken `html[lang]` + `data-boot-l10n` (ilk boyama) |
+| `assets/aura-legal-pages.js`, `assets/aura-legal-pages.css` | AURA kanonik hukuk / destek HTML (8 dil seçici; gövde TR+EN, diğerleri EN + uyarı) |
 | `CNAME` | `gezegenselcore.com` |
 | `app-ads.txt` | Reklam doğrulama |
 | `README.md` | Repo + GitHub Pages notları |

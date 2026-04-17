@@ -118,12 +118,25 @@ html {
 .navbar-default .navbar-brand {
   letter-spacing: 0.04em;
 }
-html[lang="tr"] .l10n-en,
-html[lang="tr"] .policy-locale-en {
+/* Çoklu dil: görünürlük gezegensel.js (inline !important) + ilk boyama lang-boot data-boot-l10n */
+html[data-boot-l10n="tr"] .l10n-en,
+html[data-boot-l10n="tr"] .l10n-de,
+html[data-boot-l10n="tr"] .l10n-fr,
+html[data-boot-l10n="tr"] .l10n-es,
+html[data-boot-l10n="tr"] .l10n-it,
+html[data-boot-l10n="tr"] .l10n-pt-BR,
+html[data-boot-l10n="tr"] .l10n-ar,
+html[data-boot-l10n="tr"] .policy-locale-en {
   display: none !important;
 }
-html[lang="en"] .l10n-tr,
-html[lang="en"] .policy-locale-tr {
+html[data-boot-l10n="en"] .l10n-tr,
+html[data-boot-l10n="en"] .l10n-de,
+html[data-boot-l10n="en"] .l10n-fr,
+html[data-boot-l10n="en"] .l10n-es,
+html[data-boot-l10n="en"] .l10n-it,
+html[data-boot-l10n="en"] .l10n-pt-BR,
+html[data-boot-l10n="en"] .l10n-ar,
+html[data-boot-l10n="en"] .policy-locale-tr {
   display: none !important;
 }
 
@@ -176,16 +189,21 @@ section.success hr.star-primary:after {
   background-color: #00f2fe !important;
 }
 
-/* Navbar dil düğmeleri */
+/* Navbar dil düğmeleri (8 dil — Aura ile aynı kodlar) */
 .gc-lang-group {
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 3px;
+  max-width: 20rem;
   margin-top: 14px;
   margin-left: 8px;
 }
 .gc-lang-btn {
-  margin-left: 4px;
-  padding: 6px 12px;
-  font-size: 12px;
+  margin-left: 0;
+  padding: 5px 8px;
+  font-size: 11px;
   font-weight: 700;
   border: 2px solid rgba(255, 255, 255, 0.5);
   background: transparent;
