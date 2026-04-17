@@ -18,6 +18,11 @@ Statik site **tek bir sayfa kabuğu** etrafında toplanır:
 | ReFollow uzun politika | `pages/refollow/policies/*.html` | Aynı inner-page kabuğu; build `tr`/`en` altına kopyalar. |
 | AURA hukuk / destek | `tools/templates/aura-*.master.html` | Aynı navbar + hero + footer ile **marka sitesiyle hizalı**; dil TR/EN `gc-lang-btn` + `aura-legal-pages.js` ile gövde seçimi. |
 
+## Görsel sistem
+
+- **Renk ve ritim:** Tüm sayfa tipleri aynı **CSS jetonları** (`assets/gc-design-system.css` içinde `:root`) ve aynı hero/gövde/footer cilasından beslenir; ayrıntılı tablo için `docs/DESIGN_SYSTEM.md`.
+- **İç sayfa:** `<main class="gc-main">` içindeki ikinci `section` için dikey padding, Freelancer varsayılanına göre sadeleştirilmiştir (boşluk dengesi).
+
 ## Ortak davranış
 
 - **Dil:** Yalnızca `tr` / `en` (bkz. `docs/SITE_I18N_ARCHITECTURE.md`).

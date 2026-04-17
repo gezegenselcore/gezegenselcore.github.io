@@ -1,19 +1,74 @@
 /**
- * Gezegensel Core — ortak site kabuğu ve tasarım jetonları.
- * Bootstrap Freelancer + gezegensel.css üzerine yüklenir; tüm sayfa tipleri aynı layout dilini paylaşır.
+ * Gezegensel Core — ortak site kabuğu, tasarım jetonları ve tema cilası.
+ * Yükleme sırası: …/main.css → gezegensel.css → **bu dosya** (jetonlar + son katman).
  */
 :root {
-  --gc-ink: #0d2137;
-  --gc-ink-muted: #475569;
-  /* Eski turkuaz yerine: duman grisi kabuk + bağlantı için koyu arduvaz */
-  --gc-accent: #4a5568;
-  --gc-hero-bg: #d4d9e0;
-  --gc-hero-fill: #b4bcc8;
-  --gc-surface: #f8fafc;
+  /* Metin */
+  --gc-ink: #0a1628;
+  --gc-ink-muted: #3d4d5c;
+  --gc-muted: #5a6a7a;
+
+  /* Hero / success band — orta-koyu duman grisi (hafif soğuk) */
+  --gc-hero-bg: #8e98a8;
+  --gc-hero-bg-2: #7a8595;
+  --gc-hero-text: #0a1628;
+  --gc-hero-star-fill: #8e98a8;
+
+  /* Ana sayfa bölüm zeminleri */
+  --gc-about-1: #d4d9e1;
+  --gc-about-2: #c4cbd6;
+  --gc-about-3: #b6bec9;
+  --gc-apps-1: #b8c1cc;
+  --gc-apps-2: #a8b3c0;
+  --gc-apps-3: #98a4b3;
+
+  /* Kart / panel — zeminden ayrışan ama sakin yüzeyler */
+  --gc-card-bg: #dde2ea;
+  --gc-card-border: rgba(10, 22, 40, 0.16);
+  --gc-card-shadow: 0 10px 32px rgba(10, 22, 40, 0.12);
+
+  /* Politika kartları */
+  --gc-policy-shell: #a8b2bf;
+  --gc-policy-head: #949eac;
+  --gc-policy-row: #c8ced7;
+  --gc-policy-foot: #939daa;
+
+  /* Bağlantı — desatüre lacivert-slate (cyan yok) */
+  --gc-link: #1a3352;
+  --gc-link-hover: #0a1628;
+  --gc-accent: #2c3d52;
+  --gc-accent-strong: #1e2d3d;
+
+  /* CTA / birincil düğme */
+  --gc-btn-primary-bg: #0d2137;
+  --gc-btn-primary-hover: #1a3552;
+  --gc-btn-primary-border: #061018;
+  --gc-btn-primary-fg: #f8fafc;
+
+  /* Dil şeridi — seçili durum net */
+  --gc-lang-active-bg: #2c3d52;
+  --gc-lang-active-border: #1e2d3d;
+  --gc-lang-active-fg: #f1f5f9;
+
+  /* İçerik / prose */
+  --gc-prose-bg: #cfd6df;
+  --gc-prose-bg-end: #bfc7d2;
+  --gc-prose-fg: #1a2330;
+  --gc-prose-heading: #0a1628;
+  --gc-prose-border: #9aa4b0;
+  --gc-prose-card: #fafbfd;
+  --gc-prose-note-bg: rgba(44, 61, 82, 0.1);
+  --gc-prose-note-border: #5c6d82;
+
+  /* Genel yüzey / ayırıcı */
+  --gc-surface: #eef0f3;
+  --gc-border-subtle: rgba(10, 22, 40, 0.1);
+  --gc-border-strong: rgba(10, 22, 40, 0.16);
+
   --gc-max-read: 48rem;
   --gc-space-section: 2.5rem;
   --gc-space-block: 1.25rem;
-  --gc-radius-card: 10px;
+  --gc-radius-card: 12px;
 }
 
 /* ——— Sayfa iskeleti ——— */
@@ -32,7 +87,30 @@ body.gc-site {
   flex-shrink: 0;
 }
 
-/* İç sayfa / AURA: hero bandı ile gövde arası ritim */
+/* İç sayfa: hero dikey ritim (Freelancer 100px aşırı boşluğu dengeler) */
+body.inner-page section.success.first.gc-page-hero {
+  padding-top: 5.5rem !important;
+  padding-bottom: 1.75rem !important;
+}
+@media (min-width: 768px) {
+  body.inner-page section.success.first.gc-page-hero {
+    padding-top: 6.25rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+/* İç sayfa gövde: Freelancer 100px dikey boşluğu sakinleştir */
+body.inner-page main > section:not(.success) {
+  padding-top: 2.75rem !important;
+  padding-bottom: 3rem !important;
+}
+@media (min-width: 768px) {
+  body.inner-page main > section:not(.success) {
+    padding-top: 3.25rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+}
+
 .inner-page.gc-site .gc-page-hero.success.first {
   padding-bottom: 0.5rem;
 }
@@ -41,14 +119,103 @@ body.gc-site {
   padding-bottom: var(--gc-space-section);
 }
 
-/* ——— Bölüm başlığı (tüm inner + refollow + AURA hero) ——— */
 .gc-page-hero.success.first .container {
-  padding-top: 0.25rem;
+  padding-top: 0.35rem;
 }
 
-/* ——— Footer ailesi (tüm sayfalarda aynı üst çizgi) ——— */
+/* ——— Footer ——— */
 footer.gc-site-footer {
-  border-top: 1px solid rgba(13, 33, 55, 0.08);
+  border-top: 1px solid rgba(10, 22, 40, 0.14);
+}
+
+footer.gc-site-footer .footer-above {
+  background-color: #0c1e30 !important;
+}
+
+footer.gc-site-footer .footer-below {
+  background-color: #050d14 !important;
+}
+
+/* ——— Global bağlantı (Freelancer a kuralının üzerine) ——— */
+body a,
+body a:focus,
+body a:active {
+  color: var(--gc-link);
+}
+body a:hover,
+body a.active {
+  color: var(--gc-link-hover);
+}
+
+footer.gc-site-footer a,
+footer.gc-site-footer a:hover,
+footer.gc-site-footer a:focus,
+footer.gc-site-footer a:active {
+  color: #f1f5f9 !important;
+}
+
+.scroll-top .btn {
+  color: #fff !important;
+}
+
+/* ——— Hero / success: tek zemin dili ——— */
+header,
+section.success {
+  color: var(--gc-hero-text) !important;
+  background: linear-gradient(168deg, var(--gc-hero-bg) 0%, var(--gc-hero-bg-2) 100%) !important;
+}
+
+header .intro-text .name,
+header .intro-text .skills,
+section.success h1,
+section.success h2,
+section.success h3 {
+  color: var(--gc-hero-text) !important;
+}
+
+header a,
+section.success a {
+  color: var(--gc-link) !important;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+header a:hover,
+header a:focus,
+section.success a:hover,
+section.success a:focus {
+  color: var(--gc-link-hover) !important;
+}
+
+hr.star-light {
+  border-color: var(--gc-hero-text) !important;
+}
+
+hr.star-light:after {
+  color: var(--gc-hero-text) !important;
+  background-color: var(--gc-hero-star-fill) !important;
+}
+
+section.success hr.star-primary {
+  border-color: var(--gc-hero-text) !important;
+}
+
+section.success hr.star-primary:after {
+  color: var(--gc-hero-text) !important;
+  background: linear-gradient(168deg, var(--gc-hero-bg) 0%, var(--gc-hero-bg-2) 100%) !important;
+}
+
+/* Ana sayfa kahraman: biraz daha sıkı dikey (mobilde boşluk azalır) */
+.index header .container {
+  padding-top: 88px;
+  padding-bottom: 48px;
+}
+@media (min-width: 768px) {
+  .index header .container {
+    padding-top: 140px;
+    padding-bottom: 72px;
+  }
 }
 
 /* ——— AURA: navbar içi dil şeridi ——— */
@@ -76,7 +243,6 @@ footer.gc-site-footer {
   display: none;
 }
 
-/* AURA gövde: aynı prose genişliği ve kart hissi (gezegensel .gc-prose.gc-legal ile birlikte) */
 .aura-legal-body.inner-page .gc-main .gc-prose.gc-legal {
   padding-top: 0.5rem;
 }
@@ -87,4 +253,14 @@ footer.gc-site-footer {
     justify-content: flex-start;
     margin-top: 0.35rem;
   }
+}
+
+/* Freelancer: portfolyo örtüsü — hero ile aynı ailede koyu slate */
+#portfolio .portfolio-item .portfolio-link .caption {
+  background: rgba(30, 45, 61, 0.88) !important;
+}
+
+/* Form odak etiketi — tema aksanı */
+.floating-label-form-group-with-focus label {
+  color: var(--gc-accent) !important;
 }

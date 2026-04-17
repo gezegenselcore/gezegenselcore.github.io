@@ -26,7 +26,7 @@
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #64748b;
+  color: var(--gc-muted, #5a6a7a);
   margin-right: 0.25rem;
 }
 
@@ -49,9 +49,10 @@
 }
 
 .aura-legal-picker button[aria-pressed="true"] {
-  background: #0d2137;
-  color: #eceef2;
-  border-color: #0d2137;
+  background: var(--gc-lang-active-bg, #2c3d52);
+  color: var(--gc-lang-active-fg, #f1f5f9);
+  border-color: var(--gc-lang-active-border, #1e2d3d);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .aura-legal-fallback-banner {
