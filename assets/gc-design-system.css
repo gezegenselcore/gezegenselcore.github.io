@@ -98,7 +98,7 @@ main.gc-main {
   z-index: 1030;
 }
 
-/* Dil TR/EN: collapse dışında sabit satır (mobil); md+ üst barda logo | menü | dil */
+/* Navbar: dil `.gc-navbar-toolbar` artık `.navbar-header.gc-navbar-head-cluster` içinde (logo | TR/EN | menü) */
 .gc-navbar-split::before,
 .gc-navbar-split::after {
   content: " ";
@@ -108,36 +108,64 @@ main.gc-main {
   clear: both;
 }
 
-.gc-navbar-toolbar {
+.gc-navbar-head-cluster .gc-navbar-toolbar {
   box-sizing: border-box;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
 }
 
-.gc-navbar-toolbar .gc-lang-group,
-.gc-navbar-toolbar .aura-legal-picker.gc-lang-group {
+.gc-navbar-head-cluster .gc-navbar-toolbar .gc-lang-group,
+.gc-navbar-head-cluster .gc-navbar-toolbar .aura-legal-picker.gc-lang-group {
   margin-top: 0;
   margin-left: 0;
+  justify-content: flex-end;
 }
 
 @media (max-width: 767px) {
-  .gc-navbar-split .gc-navbar-toolbar {
-    float: none;
+  .gc-navbar-split > .navbar-header.gc-navbar-head-cluster {
+    float: none !important;
     width: 100%;
-    clear: both;
-    border-bottom: 1px solid var(--gc-border-subtle);
-    padding: 6px 15px 8px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
-  .gc-navbar-split .gc-navbar-toolbar .gc-lang-group,
-  .gc-navbar-split .gc-navbar-toolbar .aura-legal-picker.gc-lang-group {
-    width: 100%;
+  .gc-navbar-head-cluster .navbar-brand {
+    float: none !important;
+    flex: 1 1 auto;
+    min-width: 0;
+    padding-left: 0 !important;
+    text-align: left;
+  }
+
+  .gc-navbar-head-cluster .gc-navbar-toolbar {
+    flex: 0 0 auto;
+    max-width: 42%;
+  }
+
+  .gc-navbar-head-cluster .gc-navbar-toolbar .gc-lang-group,
+  .gc-navbar-head-cluster .gc-navbar-toolbar .aura-legal-picker.gc-lang-group {
+    width: auto;
     max-width: none !important;
-    justify-content: flex-start !important;
-    margin: 0 !important;
-    padding-left: 0;
-    padding-right: 0;
+    justify-content: flex-end !important;
+    flex-wrap: nowrap;
   }
 
-  .gc-navbar-split .navbar-collapse {
+  .gc-navbar-head-cluster .navbar-toggle {
+    float: none !important;
+    flex: 0 0 auto;
+    margin: 8px 0 8px auto !important;
+  }
+
+  .gc-navbar-split > .navbar-collapse {
     clear: both;
     width: 100%;
   }
@@ -151,11 +179,22 @@ main.gc-main {
     justify-content: flex-end;
   }
 
-  .gc-navbar-split > .navbar-header {
-    float: none;
+  .gc-navbar-split > .navbar-header.gc-navbar-head-cluster {
+    float: none !important;
     order: 1;
     flex: 0 0 auto;
+    display: flex;
+    align-items: center;
     margin-right: auto;
+    width: auto;
+  }
+
+  .gc-navbar-head-cluster .navbar-brand {
+    float: none !important;
+  }
+
+  .gc-navbar-head-cluster .gc-navbar-toolbar {
+    padding-left: 0.75rem;
   }
 
   .gc-navbar-split > .navbar-collapse {
@@ -179,19 +218,8 @@ main.gc-main {
     visibility: visible !important;
   }
 
-  .gc-navbar-split > .gc-navbar-toolbar {
-    float: none;
-    order: 3;
-    flex: 0 0 auto;
-    width: auto;
-    clear: none;
-    border-bottom: 0;
-    padding: 0;
-    margin-left: 0.75rem;
-  }
-
-  .gc-navbar-split > .gc-navbar-toolbar .gc-lang-group,
-  .gc-navbar-split > .gc-navbar-toolbar .aura-legal-picker.gc-lang-group {
+  .gc-navbar-head-cluster .gc-navbar-toolbar .gc-lang-group,
+  .gc-navbar-head-cluster .gc-navbar-toolbar .aura-legal-picker.gc-lang-group {
     width: auto;
     max-width: 15rem;
     justify-content: flex-end;
@@ -306,6 +334,39 @@ section.success a:focus {
   color: var(--gc-link-hover) !important;
 }
 
+/* Freelancer `hr.star-*`: ::after inline-block + font-size:2em <hr> satır kutusunu şişirip
+   başlık altında dev dikey boşluk bırakabiliyor; yıldızı akıştan çıkarıyoruz. */
+hr.star-light,
+hr.star-primary {
+  position: relative !important;
+  height: 0 !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+  border: 0 !important;
+  border-top: solid 5px !important;
+  text-align: center !important;
+  max-width: 250px;
+  margin: 1rem auto 1.1rem !important;
+  overflow: visible !important;
+  padding: 0 !important;
+}
+
+hr.star-light:after,
+hr.star-primary:after {
+  display: block !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 0 !important;
+  transform: translate(-50%, -50%) !important;
+  margin: 0 !important;
+  padding: 0 0.28em !important;
+  line-height: 1 !important;
+  font-size: 1.35rem !important;
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro", FontAwesome !important;
+  font-weight: 900 !important;
+  vertical-align: baseline;
+}
+
 hr.star-light {
   border-color: var(--gc-hero-text) !important;
 }
@@ -322,6 +383,16 @@ section.success hr.star-primary {
 section.success hr.star-primary:after {
   color: var(--gc-hero-text) !important;
   background: linear-gradient(168deg, var(--gc-hero-bg) 0%, var(--gc-hero-bg-2) 100%) !important;
+}
+
+/* #about / #apps vb.: success bandı değil; Freelancer koyu çizgi + beyaz yıldız zemin */
+main.gc-main > section:not(.success) hr.star-primary {
+  border-top-color: #0d2137 !important;
+}
+
+main.gc-main > section:not(.success) hr.star-primary:after {
+  color: #0d2137 !important;
+  background-color: #ffffff !important;
 }
 
 /* Ana sayfa kahraman: biraz daha sıkı dikey (mobilde boşluk azalır) */
@@ -366,9 +437,8 @@ section.success hr.star-primary:after {
 }
 
 @media (max-width: 767px) {
-  .gc-navbar-toolbar .aura-legal-picker {
-    width: 100%;
-    justify-content: flex-start;
+  .gc-navbar-head-cluster .aura-legal-picker {
+    justify-content: flex-end;
     margin-top: 0;
   }
 }
