@@ -1,6 +1,6 @@
 # Depo dizin yapısı (hedef düzen)
 
-Tüm çalışmalar **`D:\GezegenselCore\gezegenselcore.com`** (GitHub: `gezegenselcore.github.io`) kökünde toplanır. Yanlış yazılmış `gezegensenselcore.com` gibi kopya klasörler kullanılmaz; araçlar yalnızca bu repodaki **`tools/`** altında tutulur.
+Tüm çalışmalar **`D:\GezegenselCore\gezegenselcore.com`** (GitHub: [`gezegenselcore/GezegenselCore`](https://github.com/gezegenselcore/GezegenselCore)) kökünde toplanır. Yanlış yazılmış `gezegensenselcore.com` gibi kopya klasörler kullanılmaz; araçlar yalnızca bu repodaki **`tools/`** altında tutulur.
 
 ## Kök seviyesi
 

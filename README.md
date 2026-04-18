@@ -26,7 +26,7 @@ node tools/apply-shared-chrome.mjs
 
 ## GitHub repo ve deploy
 
-1. Örnek remote: `https://github.com/gezegenselcore/gezegenselcore.github.io.git`
+1. Git remote: `https://github.com/gezegenselcore/GezegenselCore.git`
 2. `main` dalını kökten yayınla.
 3. Custom domain: `gezegenselcore.com`.
 

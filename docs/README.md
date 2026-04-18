@@ -2,7 +2,7 @@
 
 Bu klasör, marka statik sitesinin **URL mimarisi**, **yönlendirme**, **üretim (build)**, **ortak kabuk (header / footer / grid)** ve **Aura uygulaması ile hizalama** bilgisini toplar.
 
-**Canlı site:** [https://gezegenselcore.com](https://gezegenselcore.com)
+**Canlı site:** [https://gezegenselcore.com](https://gezegenselcore.com) — GitHub kaynak: [`gezegenselcore/GezegenselCore`](https://github.com/gezegenselcore/GezegenselCore).
 
 ## Hızlı özet
 
