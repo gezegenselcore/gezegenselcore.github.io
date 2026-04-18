@@ -188,6 +188,36 @@ hr.star-primary:after {
   font-weight: 900;
 }
 
+/*
+ * Freelancer yıldızlı hr: ::after `top: -.8em` + büyük font mobilde başlığın üstüne taşar.
+ * Klasik görünüm: nefes payı + hafif yukarı çekim (metin/i18n HTML’e dokunmadan).
+ */
+header .intro-text .name {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+header .intro-text hr.star-light {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+main.gc-main .text-center > h2 {
+  margin-bottom: 0.65rem !important;
+}
+main.gc-main .text-center > h2 + hr.star-primary {
+  margin-top: 0.35rem !important;
+}
+@media (max-width: 767px) {
+  header .intro-text hr.star-light {
+    margin-top: 1.2rem !important;
+    margin-bottom: 1.05rem !important;
+  }
+  hr.star-light:after,
+  hr.star-primary:after {
+    top: -0.48em !important;
+    font-size: 1.45em !important;
+  }
+}
+
 /* Hero / success renk ve yıldız çizgileri: assets/gc-design-system.css (jetonlar) */
 
 /* Navbar dil düğmeleri (TR / EN) */
