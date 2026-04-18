@@ -18,6 +18,13 @@ const STYLE_QUERY = "global1";
 const FONT_AWESOME_LINK = `  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 `;
 
+const FAVICON_LINKS = `  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+`;
+
 const TECH_BG = `  <div class="gc-tech-bg" aria-hidden="true">
     <div class="gc-tech-bg__layer gc-tech-bg__layer--grid"></div>
     <div class="gc-tech-bg__layer gc-tech-bg__layer--schema"></div>
@@ -137,6 +144,22 @@ function ensureFontAwesomeLink(html) {
   );
   if (injected !== html) return injected;
   return html.replace(/<\/head>/i, `${FONT_AWESOME_LINK}</head>`);
+}
+
+/** Kök mutlak yollar; Google ve tüm derinliklerde aynı favicon. */
+function ensureFaviconLinks(html) {
+  if (html.includes('href="/favicon.ico"') && html.includes("apple-touch-icon")) return html;
+  const m = html.match(/<meta\s+name="viewport"[^>]*>\s*\n/i);
+  if (m && m.index !== undefined) {
+    const i = m.index + m[0].length;
+    return html.slice(0, i) + FAVICON_LINKS + html.slice(i);
+  }
+  const m2 = html.match(/<meta\s+charset="utf-8"[^>]*>\s*\n/i);
+  if (m2 && m2.index !== undefined) {
+    const i = m2.index + m2[0].length;
+    return html.slice(0, i) + FAVICON_LINKS + html.slice(i);
+  }
+  return html;
 }
 
 function buildFooter(fromFile, en) {
@@ -272,7 +295,7 @@ function walkHtml(dir, out = []) {
     if (ent.name.startsWith(".")) continue;
     const p = path.join(dir, ent.name);
     if (ent.isDirectory()) {
-      if (ent.name === "tools" || ent.name === "node_modules") continue;
+      if (ent.name === "tools" || ent.name === "node_modules" || ent.name === "Theme") continue;
       walkHtml(p, out);
     } else if (ent.name.endsWith(".html")) out.push(p);
   }
@@ -287,6 +310,7 @@ function patch(html, fromFile) {
   if (SKIP_FILES.has(posixFile)) {
     let out = ensureStylesheetVersion(html);
     out = ensureFontAwesomeLink(out);
+    out = ensureFaviconLinks(out);
     return out !== html ? out : null;
   }
   if (!html.includes("style.css") || !html.includes("site-header")) return null;
@@ -324,6 +348,7 @@ function patch(html, fromFile) {
 
   out = ensureStylesheetVersion(out);
   out = ensureFontAwesomeLink(out);
+  out = ensureFaviconLinks(out);
 
   return out;
 }
