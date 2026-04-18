@@ -723,3 +723,58 @@ main.gc-inner-main {
   justify-content: center;
   margin: 1rem 0 1.5rem;
 }
+
+/* Dil seçici — yalnızca tr/en ana sayfalarında (.site-header__tail) */
+.site-header__tail {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.site-header__tail .nav-burger {
+  margin-left: 0;
+}
+
+.site-header__tail .nav-desktop {
+  margin-left: 0;
+}
+
+.gc-lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.gc-lang-switch a {
+  padding: 0.35rem 0.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--gc-ink);
+  font-weight: 700;
+}
+
+.gc-lang-switch a:hover,
+.gc-lang-switch a:focus-visible {
+  background: rgba(201, 162, 39, 0.2);
+  color: var(--gc-ink);
+}
+
+.gc-lang-switch__sep {
+  color: var(--gc-ink-muted);
+  user-select: none;
+  padding: 0 0.1rem;
+}
+
+.gc-lang-switch__current {
+  padding: 0.35rem 0.5rem;
+  border-radius: 8px;
+  background: rgba(201, 162, 39, 0.28);
+  border: 1px solid rgba(10, 22, 40, 0.12);
+  color: var(--gc-ink);
+}
