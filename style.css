@@ -893,14 +893,17 @@ main.gc-inner-main {
 .site-footer .gc-footer-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem 0.85rem;
-  row-gap: 0.45rem;
+  gap: 0.5rem 1.15rem;
+  row-gap: 0.55rem;
   justify-content: center;
   align-items: center;
   margin: 0;
 }
 
 .site-footer .gc-footer-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
   font-weight: 600;
   font-size: 0.9rem;
   text-decoration: none;
@@ -908,6 +911,24 @@ main.gc-inner-main {
   padding: 0.45rem 0.65rem;
   border-radius: 8px;
   transition: color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.site-footer .gc-footer-nav__icon {
+  width: 1.05em;
+  height: 1.05em;
+  flex-shrink: 0;
+}
+
+.site-footer .gc-footer-nav__icon--stroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.85;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.site-footer .gc-footer-nav__icon--brand {
+  fill: currentColor;
 }
 
 .site-footer .gc-footer-nav a:hover,
