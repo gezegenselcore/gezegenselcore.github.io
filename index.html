@@ -1,16 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gezegensel Core — AURA ve ReFollow ile günlük wellness ve sosyal veride netlik. Bağımsız stüdyo.">
   <title>Gezegensel Core</title>
-  <link rel="canonical" href="https://gezegenselcore.com/en/index.html" />
-  <script src="/assets/site-path.js"></script>
-  <script src="/assets/lang-boot.js"></script>
-  <script src="/assets/root-locale-redirect.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <p><a href="https://gezegenselcore.com/en/index.html">Gezegensel Core</a></p>
-  <noscript><p><a href="https://gezegenselcore.com/en/index.html">Gezegensel Core (English)</a></p></noscript>
+  <a class="skip-link" href="#hakkinda">İçeriğe atla</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="#ust">GEZEGENSEL CORE</a>
+      <input type="checkbox" id="nav-open" class="nav-toggle">
+      <label for="nav-open" class="nav-burger" aria-label="Menüyü aç veya kapat">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <div class="nav-panel" id="nav-panel">
+        <a href="#ust">Anasayfa</a>
+        <a href="#hakkinda">Hakkında</a>
+        <a href="#urunler">Ürünler</a>
+        <a href="#iletisim">İletişim</a>
+      </div>
+      <nav class="nav-desktop" aria-label="Ana menü">
+        <a href="#ust">Anasayfa</a>
+        <a href="#hakkinda">Hakkında</a>
+        <a href="#urunler">Ürünler</a>
+        <a href="#iletisim">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="ust" class="hero">
+      <div class="section-inner">
+        <img
+          class="hero__logo"
+          src="assets/icons/GezegenselCore_icon.png"
+          width="256"
+          height="256"
+          alt="Gezegensel Core amblemi"
+        >
+        <h1 class="hero__title">GEZEGENSEL CORE</h1>
+        <p class="hero__motto">
+          Günlük yaşam için yapay zekâ destekli wellness; sosyal akış için net veri —
+          <strong>AURA</strong> ve <strong>ReFollow</strong>.
+        </p>
+      </div>
+    </section>
+
+    <section id="hakkinda" class="about" aria-labelledby="hakkinda-baslik">
+      <div class="section-inner">
+        <div class="about__emblem" aria-hidden="true">
+          <svg class="about__star" viewBox="0 0 24 24" fill="currentColor" role="presentation">
+            <path d="M12 2l2.9 7.4h7.6l-6 4.6 2.3 7-6.8-5-6.8 5 2.3-7-6-4.6h7.6z"/>
+          </svg>
+          <span class="about__line"></span>
+        </div>
+        <h2 class="about__heading" id="hakkinda-baslik">HAKKINDA</h2>
+        <div class="about__prose">
+          <p>
+            Gezegensel Core, bağımsız bir stüdyo markasıdır; AURA ile günlük wellness, sağlık sinyalleri ve yapay zekâ destekli rehberlik; ReFollow ile Instagram verisinde net içgörü sunar. Karmaşık veriyi sade arayüzlerle göstermek ve gün içi kararlarınızda ölçülebilir bir özet vermek işimizin merkezindedir. Ürünlerde performans, gizlilik odaklı varsayılanlar ve okunabilir veri sunumu ön plandadır. Yapay zekâ; tıbbi teşhis veya kesin gelecek iddiası olmadan rehberlik ve özetleme için kullanılır.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="urunler" class="products" aria-labelledby="urunler-baslik">
+      <div class="section-inner">
+        <h2 class="products__heading" id="urunler-baslik">ÜRÜNLER</h2>
+        <div class="product-grid">
+          <article class="product-card">
+            <img src="assets/icons/AURA.png" width="120" height="120" alt="AURA uygulama simgesi">
+            <h3>AURA</h3>
+            <p>Günlük özet, isteğe bağlı sağlık verisi ve yapay zekâ rehberi — tıbbi teşhis yerine geçmez.</p>
+            <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.gezegenselcore.aura" target="_blank" rel="noopener noreferrer">Google Play</a>
+          </article>
+          <article class="product-card">
+            <img src="assets/icons/ReFollow_icon.png" width="120" height="120" alt="ReFollow uygulama simgesi">
+            <h3>ReFollow</h3>
+            <p>Instagram ilişkilerinizi tablo ve özetlerle okunur hâle getirir.</p>
+            <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.refollow.app" target="_blank" rel="noopener noreferrer">Google Play</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="iletisim" class="contact-block" aria-labelledby="iletisim-baslik">
+      <div class="section-inner">
+        <h2 class="products__heading" id="iletisim-baslik">İLETİŞİM</h2>
+        <p>
+          <a href="mailto:support@gezegenselcore.com">support@gezegenselcore.com</a>
+        </p>
+        <p>Türkiye</p>
+        <div class="contact-links">
+          <a href="privacy.html">Gizlilik</a>
+          <a href="support.html">Destek</a>
+          <a href="https://github.com/GezegenselCore" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2024 Gezegensel Core. Tüm hakları saklıdır.</p>
+  </footer>
+
+  <a class="scroll-top" href="#ust" aria-label="Yukarı çık">↑</a>
 </body>
 </html>
