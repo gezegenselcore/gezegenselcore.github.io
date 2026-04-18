@@ -1,8 +1,8 @@
 # GitHub Pages — bu repo
 
-- **Yayın kökü:** repository kök dizini (`/index.html`, `/assets/`, `/pages/`).
-- **Özel alan:** `CNAME` dosyasında `gezegenselcore.com` — GitHub repo **Settings → Pages → Custom domain** ile eşleşmeli.
-- **HTTPS:** “Enforce HTTPS” önerilir (DNS doğrulandıktan sonra).
-- **İş akışı:** Ek bir GitHub Actions workflow zorunlu değil; `main` push ile Pages yenilenir.
+- **Yayın kökü:** repository kök dizini (`index.html`, `style.css`, `tr/`, `en/`, `assets/`, `pages/`, `aura/`, …).
+- **Özel alan:** `CNAME` → `gezegenselcore.com` — GitHub **Settings → Pages → Custom domain** ile aynı olmalı.
+- **HTTPS:** DNS doğrulandıktan sonra “Enforce HTTPS” önerilir.
+- **İş akışı:** Zorunlu Actions yok; `main` push ile Pages yenilenir.
 
-Tema ve çoklu dil: kök `README.md` ve `SITE_STRUCTURE.md`.
+Tema, ızgara, footer ve dil: kök **`README.md`**, **`SITE_STRUCTURE.md`**, **`docs/README.md`**, **`docs/REPOSITORY_LAYOUT.md`**.

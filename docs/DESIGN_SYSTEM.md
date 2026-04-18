@@ -1,76 +1,47 @@
-# Tasarım sistemi (gezegenselcore.com)
+# Tasarım sistemi — gezegenselcore.com (güncel)
 
 ## Amaç
 
-Tek marka dili: **Freelancer** iskeleti + **`assets/gezegensel.css`** bileşenleri + **`assets/gc-design-system.css`** (jetonlar + hero/footer cilası + iç sayfa ritmi). Parlak turkuaz kullanılmaz; vurgu **desatüre lacivert–slate** tonlarındadır.
+Canlı marka yüzeyi **tek CSS dosyası** üzerinden yönetilir: kökteki **`style.css`**. Ton: açık zemin (`--gc-bg`), koyu lacivert metin (`--gc-ink`), **altın aksan** (`--gc-accent`). Arka planda çok düşük kontrastlı **kare ızgara** ve hafif **şema** dokusu (`#111A24` tabanlı `rgba`, bkz. `--gc-tech-grid` ve `.gc-tech-bg__layer--grid`).
 
-## Dosya rolleri
+## Birincil dosya: `style.css`
 
-| Dosya | Rol |
+| Bölüm | İçerik |
+|--------|--------|
+| `:root` | Renkler, gölgeler, yarıçaplar, **`--gc-tech-grid`** (ızgara RGB), header yüksekliği. |
+| **Arka plan** | `.gc-tech-bg` + `.gc-tech-bg__layer--grid` + `.gc-tech-bg__layer--schema` (sabit katman, `z-index: -1`, hafif parallax ile `gc-home-parallax.js`). |
+| **Üst bilgi** | `.site-header`, `.site-header__inner`, `.brand`, `.nav-desktop`, `.nav-panel`, `.nav-burger`, `.gc-lang-switch`. |
+| **Hub** | `.hero`, `.about`, `.gc-highlights`, `.products`, `.product-card`, `.contact-block`. |
+| **İç sayfa** | `body.gc-inner`, `.gc-page-hero`, `.gc-crumb`, `.gc-doc` (kart zemini + ince doku `::before`). |
+| **Alt bilgi** | `.site-footer`, `.gc-footer-nav` — bağlantı + **satır içi SVG** (`gc-footer-nav__icon`, `--stroke` / `--brand`). |
+| **Butonlar** | `.btn-play`, `.btn-ghost`, `.gc-btn-stack`. |
+
+Yükleme: her sayfada `<link rel="stylesheet" href="…/style.css?v=…">` (sürüm parametresi önbellek için; `apply-shared-chrome.mjs` güncelleyebilir).
+
+## Eski / yardımcı varlıklar
+
+| Dosya | Not |
 |--------|-----|
-| `assets/gc-design-system.css` | **`:root` jetonları**, sayfa kabuğu (`.gc-site`, `.gc-main`), hero/success zemin ve metin, global `a` (footer hariç tutulmuş), iç sayfa hero/gövde dikey padding, footer koyulaştırma, AURA navbar dil şeridi, portfolyo örtüsü. |
-| `assets/gezegensel.css` | Navbar davranışı, politika kartları, prose tipografisi, kartlar, dil düğmeleri — renklerde **mümkün olduğunca `var(--gc-*)`**. |
-| `assets/freelancer/css/main.css` | Tema tabanı; kritik yüzeyler `var(--gc-*, yedek)` ile jetonlara bağlı (gc-design yüklenmeden tek başına kullanılırsa yedek hex devreye girer). |
-| `assets/aura-legal-pages.css` | AURA dil şeridi; seçili durum `var(--gc-lang-active-*)` ile marka ile hizalı. |
+| `assets/gezegensel.css`, `assets/gc-design-system.css` | Geçmiş veya alternatif tema yüzeyleri; **yeni hub ve locale sayfaları** `style.css` ile hizalanır. |
+| `assets/freelancer/` | Bootstrap 3 + Freelancer şablonu; yalnızca eski/yardımcı sayfa yollarında kullanılıyorsa geçerli. |
+| `assets/aura-legal-pages.css` | AURA hukuk sayfalarında dil şeridi ve gövde seçimi. |
 
-Yükleme sırası (tipik): `bootstrap` → `main.css` → `gezegensel.css` → **`gc-design-system.css`** → (AURA sayfalarında) `aura-legal-pages.css`.
+## Ürün mesajı (hub)
 
-## Renk jetonları (`:root`)
+- **AURA:** Yapay zekâ destekli wellness ve sağlık **rehberliği**; tıbbi teşhis veya tedavi iddiası yok.  
+- **ReFollow:** Instagram dışa aktarım verisinde **içgörü** ve tablolar; veri cihazda işlenir.
 
-| Jeton | Kullanım |
-|--------|----------|
-| `--gc-ink` | Birincil metin (koyu lacivert-gri). |
-| `--gc-ink-muted` | İkincil metin. |
-| `--gc-muted` | Etiket / tagline / soluk açıklama. |
-| `--gc-hero-bg`, `--gc-hero-bg-2` | Hero / `section.success` gradient uçları (orta-koyu duman grisi). |
-| `--gc-hero-text` | Hero başlık ve gövde metni. |
-| `--gc-hero-star-fill` | Yıldız ayırıcı arka planı (hero ile uyumlu). |
-| `--gc-about-1` … `--gc-apps-3` | Ana sayfa bölüm gradyanları. |
-| `--gc-card-bg`, `--gc-card-border`, `--gc-card-shadow` | Uygulama kartları. |
-| `--gc-policy-shell`, `--gc-policy-head`, `--gc-policy-row`, `--gc-policy-foot` | Politika panelleri. |
-| `--gc-link`, `--gc-link-hover` | Gövde ve hero içi bağlantı (slate-mavi, cyan değil). |
-| `--gc-accent`, `--gc-accent-strong` | Form odak / ikincil vurgu. |
-| `--gc-btn-primary-*` | Birincil CTA (`.btn.gc-btn-solid`). |
-| `--gc-lang-active-*` | TR/EN seçili dil düğmesi + AURA şeridi. |
-| `--gc-prose-bg`, `--gc-prose-bg-end` | İç sayfa gövde zemini gradyanı. |
-| `--gc-prose-fg`, `--gc-prose-heading`, `--gc-prose-border`, `--gc-prose-card` | Uzun metin / hukuk kartı. |
-| `--gc-prose-note-bg`, `--gc-prose-note-border` | Alıntı / not kutusu. |
-| `--gc-border-subtle`, `--gc-border-strong` | Ayırıcılar. |
+Metinler `tr/index.html` ve `en/index.html` içinde tutulur; yasal uzun metinler ilgili politika sayfalarında.
 
-## Mobil dikey ritim (≤767px)
+## Erişilebilirlik ve etkileşim
 
-- `main.gc-main > section`: Freelancer’ın **75px** bölüm padding’i yerine **~1.5rem** (`gc-design-system.css`).
-- Bölüm **h2**: **~1.55rem** (Freelancer **3em** dev başlığı iptal).
-- **hr.star-*** margin mobilde küçültüldü; **#apps** başlık satırı ↔ kart satırı arası **margin sıfır**.
-- Ana **header** `.container` ve **inner hero** üst/alt padding mobilde ayrı sıkıldı; **`section.first`** üst 120px mobilde **0** (`gezegensel.css`).
-- **Dil**: `.gc-lang-wrap` tam genişlik, üst border, `.gc-lang-group` `margin-top` sıfır (`gc-design-system.css`).
+- **Skip link** (`skip-link`) içeriğe atlar.  
+- **Odak:** `:focus-visible` ile görünür halka (footer ve bağlantılar).  
+- **Hareket:** `prefers-reduced-motion` altında tech katmanı dönüşümleri sadeleşir (`style.css` içinde media sorgusu).
 
-## Katmanlama (mobil / kaydırma)
+## Bakım
 
-- **Navbar** üstte opak beyaz zemin (`gezegensel.css`); yarı saydam bar kaydırırken metnin “soluk üst katman” altında kalması hissi oluşturmaz.
-- **`main.gc-main`**: `position: relative`, `z-index: 0`, `isolation: isolate` — gövde kendi stacking bağlamında; hero gradient’i alt bölümlerin üstüne “sızmasın”.
-- **`header` / `section.success`**: `position: relative`, `isolation: isolate` — hero boyası kutuya sıkısın.
-- **Freelancer `#portfolio * { z-index: 2 }`** kaldırıldı; yalnızca `.caption` overlay’inde `z-index` (yanlış global stacking önlendi).
+- Global görünüm değişikliği: önce **`style.css`**, ardından gerekirse `node tools/apply-shared-chrome.mjs` ile tüm sayfalarda kabuk tutarlılığı.  
+- Izgara / şema yoğunluğu: `.gc-tech-bg__layer--grid` ve şema SVG veri URL’sindeki opaklıklar.
 
-## Bileşen davranışı
-
-- **Primary CTA** (`.btn.gc-btn-solid`): `min-height: 44px`, net gölge, `:focus-visible` halkası; renkler jetondan.
-- **Metin bağlantıları**: `body a` slate; **footer** ve **scroll-top** için ayrı açık renk kuralı (koyu zemin üzerinde okunurluk).
-- **Hero**: gradient + iç sayfada daha sıkı üst/alt padding; ana sayfada `header .container` dikey boşluk sakinleştirildi.
-- **İç sayfa gövde**: `main > section:not(.success)` için Freelancer’ın aşırı 100px padding’i `!important` ile ~2.75–3.5rem bandına çekildi.
-
-## Sınıf sözlüğü (kabuk)
-
-| Sınıf | Kullanım |
-|--------|----------|
-| `gc-site` | `body` — dikey flex, footer alta. |
-| `gc-main` | Ana içerik sarmalayıcı. |
-| `gc-page-hero` | `section.success.first` ile birlikte üst bant. |
-| `gc-site-footer` | Footer + üst border; `.footer-above` / `.footer-below` koyu tonlar. |
-| `gc-prose` / `gc-legal` | Okuma genişliği, gövde link ağırlığı 500. |
-
-## Build
-
-Statik HTML’de `gc-design-system.css` linki build çıktısına eklenir; AURA kök sayfalarında da aynı sıra korunur.
-
-Son güncelleme: 2026-04-18 (premium duman grisi + CTA/link cilası)
+Son güncelleme: 2026-04-18

@@ -9,7 +9,7 @@
 
 **Kural:** Web sitesi yalnızca **`/tr/…`** ve **`/en/…`** üretir ve indeksler. Aura uygulaması içi dil **`tr`** ise kamu hukuk / destek bağlantıları **`https://gezegenselcore.com/tr/…`**; **aksi halde** her zaman **`https://gezegenselcore.com/en/…`**.
 
-Uygulama tarafı implementasyonu Aura mobil reposundadır (ör. `gezegenselLegalUrls` benzeri yardımcılar); bu belge **web davranışının** referans sözleşmesidir.
+Uygulama tarafı implementasyonu Aura mobil reposundadır (ör. `gezegenselLegalUrls` benzeri yardımcılar); bu belge **web davranışının** referans sözleşmesidir. Statik sayfaların görsel kabuğu (header, ikonlu footer, tech ızgara) kök `style.css` ve `tools/apply-shared-chrome.mjs` ile tutarlıdır.
 
 ## Örnek kamu bağlantılar
 

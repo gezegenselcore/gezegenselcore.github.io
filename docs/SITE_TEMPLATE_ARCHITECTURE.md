@@ -1,41 +1,39 @@
-# Site şablon mimarisi
+# Site şablon mimarisi (güncel)
 
-## Özet
+## İki kaynak akışı
 
-Statik site **tek bir sayfa kabuğu** etrafında toplanır:
+1. **Elle bakım + kabuk script’i**  
+   `tr/`, `en/`, kök `aura/`, `pages/` altındaki birçok sayfa **doğrudan HTML** olarak düzenlenir. Ortak **header** (dil anahtarı, burger, dört ana bağlantı), **ikonlu footer**, **`gc-tech-bg`** ve `gc-home-parallax.js` için:  
+   `node tools/apply-shared-chrome.mjs`  
+   (`tools/apply-shared-chrome.mjs` içinde yollar `relHref` ile derinliğe göre üretilir.)
 
-1. **Üst:** Bootstrap 3 `navbar-default` (sabit), marka, menü, TR/EN dil seçici.
-2. **Hero:** İç sayfalar, ReFollow politikaları ve AURA hukuk/destek sayfalarında `section.success.first.gc-page-hero` (breadcrumb + sayfa başlığı).
-3. **Gövde:** `<main class="gc-main">` içinde `container` + `gc-prose` (ve gerektiğinde `gc-legal`).
-4. **Alt:** Freelancer üç sütunlu `footer` + `gc-site-footer` sınıfı.
+2. **Build zamanı üretimi**  
+   `node tools/build-locale-pages.mjs` — `tools/templates/*.master.html` + `tools/i18n/messages/*` ile belirli sayfaların `tr` / `en` kopyaları üretilir veya güncellenir. Üretimden sonra yine **`apply-shared-chrome`** ile kabuk hizalanması gerekebilir.
 
-## Sayfa tipleri
+## Sayfa kabuğu (canlı yüzey)
 
-| Tip | Kaynak | Not |
-|-----|--------|-----|
-| Landing / hub | `tools/templates/index.master.html` | `body.index.gc-site`, ana içerik `<main class="gc-main">` içinde. |
-| Site legal / support | `privacy.master.html`, `support.master.html` | `inner-page gc-site`, iki `section` (hero + içerik) `<main>` içinde. |
-| ReFollow uzun politika | `pages/refollow/policies/*.html` | Aynı inner-page kabuğu; build `tr`/`en` altına kopyalar. |
-| AURA hukuk / destek | `tools/templates/aura-*.master.html` | Aynı navbar + hero + footer ile **marka sitesiyle hizalı**; dil TR/EN `gc-lang-btn` + `aura-legal-pages.js` ile gövde seçimi. |
+| Katman | HTML / sınıf |
+|--------|----------------|
+| Arka plan | `<div class="gc-tech-bg">` → grid + şema katmanları. |
+| Üst | `<header class="site-header">` → `.site-header__inner`, `.brand` (locale `index.html#ust`), `.gc-lang-switch`, masaüstü / mobil menü. |
+| Gövde | **Hub:** `main` içinde `section.hero`, `about`, `gc-highlights`, `products`, `contact-block`. **İç:** `main#icerik`, `header.gc-page-hero`, `article.gc-doc` veya benzeri. |
+| Alt | `<footer class="site-footer">` → `nav.gc-footer-nav` (SVG + metin: Gizlilik, Destek, İletişim, GitHub, Instagram). |
 
-## Görsel sistem
+İç sayfalarda genelde `body` sınıfı: `gc-inner`.
 
-- **Renk ve ritim:** Tüm sayfa tipleri aynı **CSS jetonları** (`assets/gc-design-system.css` içinde `:root`) ve aynı hero/gövde/footer cilasından beslenir; ayrıntılı tablo için `docs/DESIGN_SYSTEM.md`.
-- **İç sayfa:** `<main class="gc-main">` içindeki ikinci `section` için dikey padding, Freelancer varsayılanına göre sadeleştirilmiştir (boşluk dengesi).
+## Dil
 
-## Ortak davranış
+- Kanonik segmentler: **`/tr/…`** ve **`/en/…`**.  
+- Ayrıntı: **`docs/SITE_I18N_ARCHITECTURE.md`**, yönlendirme: **`docs/README.md`**.
 
-- **Dil:** Yalnızca `tr` / `en` (bkz. `docs/SITE_I18N_ARCHITECTURE.md`).
-- **Varlıklar:** `assets/site-path.js`, `lang-boot.js`, `gezegensel.js`; AURA sayfalarında tam jQuery + Bootstrap + `freelancer.js` (navbar mobil kırılımı).
-- **SEO:** `build-locale-pages.mjs` içinde `hreflang` + canonical; AURA gövdesi yerelde kalır, başlık/meta `AURA_SEO` ile yerelleştirilir.
+## SEO ve hukuk
 
-## Kaldırılan dağınıklık
+- Sayfa başına `canonical`, mümkünse `hreflang` (`tr`, `en`, `x-default`).  
+- AURA tam metin: `aura-legal-pages.js` ile TR/EN gövde seçimi.
 
-- AURA master’lardaki **tek başına inline `<style>`** kaldırıldı; tipografi **Freelancer + gezegensel** ile hizalandı.
-- AURA üstteki **ayrı fixed dil şeridi** navbar içine **gömüldü** (`.aura-legal-picker--embedded`).
+## Bakım ipuçları
 
-## Bakım
-
-- Navbar veya footer metni değişince: önce **hub / privacy / support** master’larından birini güncelleyin; AURA şablonlarındaki aynı blokları **senkron** tutun (veya ileride `tools/templates/partials/` altına taşınacak ortak parçaya çıkarın).
+- Navbar veya footer metni değişince: **hub** (`tr/index.html`, `en/index.html`) güncellenir; ardından `apply-shared-chrome` diğer sayfalara yayılır.  
+- Yalnız şablondan üretilen içerik değişince: önce **master** + `build-locale-pages`, sonra gerekiyorsa **apply-shared-chrome**.
 
 Son güncelleme: 2026-04-18

@@ -6,7 +6,7 @@
 
 **English:** `x-default` hreflang ve bilinmeyen dil fallback’i `en`’i işaret eder. Bkz. `assets/site-path.js`.
 
-**Tema:** `assets/freelancer/` (Bootstrap 3 + Freelancer). Marka katmanı: `assets/gezegensel.css`, **`assets/gc-design-system.css`** (ortak kabuk), `assets/lang-boot.js`, `assets/gezegensel.js`, **`assets/site-path.js`**, `assets/legacy-path-redirect.js`, `assets/root-locale-redirect.js`. AURA hukuk: `assets/aura-legal-pages.{js,css}`. Şablon özeti: **`docs/SITE_TEMPLATE_ARCHITECTURE.md`**.
+**Tema (canlı):** kök **`style.css`** (lacivert kare ızgara, header, ikonlu footer, iç sayfa `gc-doc`). Betikler: **`assets/gc-home-parallax.js`**, `assets/lang-boot.js`, `assets/gezegensel.js`, **`assets/site-path.js`**, `assets/legacy-path-redirect.js`, `assets/root-locale-redirect.js`. AURA hukuk: `assets/aura-legal-pages.{js,css}`. **Kabuk senkronu:** `node tools/apply-shared-chrome.mjs`. Eski / yardımcı: `assets/gezegensel.css`, `assets/gc-design-system.css`, `assets/freelancer/`. Özet: **`docs/SITE_TEMPLATE_ARCHITECTURE.md`**, **`docs/DESIGN_SYSTEM.md`**.
 
 ## Kök (`/`)
 
@@ -17,6 +17,7 @@
 | `404.html` | GitHub Pages 404; `site-path.js` ile eski dil önekli yollar `/en/…`’e. |
 | `assets/` | Ortak JS/CSS; yukarıdaki çözümleyiciler. |
 | `tools/build-locale-pages.mjs` | `tr` / `en` ağacını üretir; `tools/i18n/` çeviri paketini uygular. |
+| `tools/apply-shared-chrome.mjs` | İç sayfalarda ortak tech-bg, header, ikonlu footer, stil sürüm parametresi. |
 | `tools/templates/` | `index.master.html`, `privacy.master.html`, `support.master.html`, `aura-*.master.html`. |
 | `docs/` | Site mimarisi ve uygulama hizalama belgeleri. |
 

@@ -12,14 +12,16 @@ Statik HTML, GitHub Pages (`CNAME` → özel alan). **Dosya haritası:** `SITE_S
 
 ```bash
 node tools/build-locale-pages.mjs
+node tools/apply-shared-chrome.mjs
 ```
 
 Şablonlar: `tools/templates/`. AURA tam metin master’ları `tools/templates/aura-*.master.html` (ilk çalıştırmada otomatik oluşturulur; hukuk metni değişince bu dosyaları güncelleyip script’i yeniden çalıştırın).
 
 ## Tema ve dil
 
-- **Tema:** `assets/freelancer/`; zemin / hero duman grisi (`#d4d9e0` vb.) + `#0d2137` metin; üstüne `assets/gezegensel.css` ve `assets/gc-design-system.css`.
-- **Betikler:** `lang-boot.js` (`data-ui-locale`), `gezegensel.js` (navbar; path altında dil düğmesi **sayfa değiştirir**), **`site-path.js`**, AURA sayfalarında `aura-legal-pages.js`.
+- **Tema (canlı yüzey):** kök **`style.css`** — açık zemin, lacivert kare ızgara (`gc-tech-bg`), kurumsal **header** ve **ikonlu footer** (SVG). İç sayfalarda kabuk: `node tools/apply-shared-chrome.mjs`.
+- **Betikler:** `gc-home-parallax.js` (hafif arka plan hareketi), `lang-boot.js` (`data-ui-locale`), `gezegensel.js`, **`site-path.js`**, AURA sayfalarında `aura-legal-pages.js`. Yönlendirme: `legacy-path-redirect.js`, `root-locale-redirect.js`.
+- **Eski / yardımcı CSS:** `assets/gezegensel.css`, `assets/gc-design-system.css`, `assets/freelancer/` — yalnızca ilgili yüzeylerde.
 - **Diller:** Yalnızca **`tr`** ve **`en`**; `hreflang` yalnızca `tr`, `en`, `x-default` (varsayılan EN).
 
 ## GitHub repo ve deploy
@@ -30,6 +32,7 @@ node tools/build-locale-pages.mjs
 
 ```bash
 node tools/build-locale-pages.mjs
+node tools/apply-shared-chrome.mjs
 git add -A && git commit -m "site: …" && git push origin main
 ```
 
