@@ -784,12 +784,14 @@ section {
 body.gc-inner > main,
 main.gc-inner-main {
   padding-top: var(--gc-header-h);
+  padding-bottom: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .gc-page-hero {
   text-align: center;
-  padding: calc(var(--gc-header-h) + 1.25rem) 1.25rem 2rem;
-  background: var(--gc-surface);
+  padding: 2rem 1.25rem 1.85rem;
+  background: rgba(244, 247, 251, 0.58);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(10, 22, 40, 0.08);
 }
 
@@ -872,6 +874,56 @@ main.gc-inner-main {
   border: 0;
   border-top: 1px solid rgba(10, 22, 40, 0.12);
   margin: 1.75rem 0;
+}
+
+/* İç sayfalar: ürün kartlarıyla aynı cam / gölge dilimi */
+body.gc-inner .gc-doc {
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+  padding: clamp(1.35rem, 3vw, 2rem) clamp(1.15rem, 3vw, 1.75rem) clamp(2rem, 4vw, 2.75rem);
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.92) 0%, rgba(244, 247, 251, 0.98) 100%);
+  border-radius: var(--gc-radius);
+  box-shadow: var(--gc-shadow);
+  border: 1px solid rgba(10, 22, 40, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+body.gc-inner .gc-doc::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(
+      -8deg,
+      transparent,
+      transparent 20px,
+      rgba(10, 22, 40, 0.018) 20px,
+      rgba(10, 22, 40, 0.018) 21px
+    ),
+    linear-gradient(
+      200deg,
+      transparent 30%,
+      rgba(201, 162, 39, 0.045) 55%,
+      transparent 85%
+    );
+  opacity: 0.65;
+}
+
+body.gc-inner .gc-doc > * {
+  position: relative;
+  z-index: 1;
+}
+
+body.gc-inner .gc-doc .gc-btn-stack {
+  margin-top: 0.35rem;
+}
+
+body.gc-inner .gc-doc a.btn-play,
+body.gc-inner .gc-doc a.btn-ghost {
+  text-decoration: none;
 }
 
 .lang-block {
