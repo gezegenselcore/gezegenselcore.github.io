@@ -191,13 +191,12 @@ function buildFooter(fromFile, en) {
         ${ICONS.ig}
         ${L.i}
       </a>
-      <a href="https://www.linkedin.com/in/gezegenselcore" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/cprkdr" target="_blank" rel="noopener noreferrer">
         ${ICONS.li}
         ${L.li}
       </a>
-      <a href="https://x.com/gezegenselcore" target="_blank" rel="noopener noreferrer">
+      <a href="https://x.com/gezegenselcore" target="_blank" rel="noopener noreferrer" aria-label="X">
         ${ICONS.x}
-        ${L.x}
       </a>
     </nav>
     <p class="site-footer__legal">${en ? "© 2024 Gezegensel Core. All rights reserved." : "© 2024 Gezegensel Core. Tüm hakları saklıdır."}</p>

@@ -992,6 +992,47 @@ body.gc-inner .gc-doc a.btn-ghost {
   box-shadow: 0 0 0 1px rgba(201, 162, 39, 0.2);
 }
 
+/* Ana sayfa sosyal bağlantılar (Hakkında üstü) */
+.gc-social-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.15rem;
+  row-gap: 0.55rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0.75rem 0 0;
+}
+
+.gc-social-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--gc-ink);
+  padding: 0.45rem 0.65rem;
+  border-radius: 8px;
+  transition: color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.gc-social-nav .gc-footer-nav__icon {
+  width: 1.05em;
+  height: 1.05em;
+  flex-shrink: 0;
+}
+
+.gc-social-nav .gc-footer-nav__icon--brand {
+  fill: currentColor;
+}
+
+.gc-social-nav a:hover,
+.gc-social-nav a:focus-visible {
+  color: var(--gc-accent-dark);
+  background: rgba(201, 162, 39, 0.22);
+  box-shadow: 0 0 0 1px rgba(201, 162, 39, 0.2);
+}
+
 /* AURA hukuk: dil seçici */
 #aura-legal-picker {
   max-width: 48rem;
