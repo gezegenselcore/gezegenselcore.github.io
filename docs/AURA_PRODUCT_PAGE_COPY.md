@@ -2,6 +2,8 @@
 
 Kaynak: `tr/aura/index.html` ve `en/aura/index.html` içindeki **Öne çıkan alanlar / Highlights** bölümü. Güncellerken bu dosyayı ve HTML’i birlikte tutun.
 
+**Düzen:** İlk dört alan (Ana Sayfa, Küre, Binaural, Anima) ekran görüntüsü + açıklama; Yansıma, Rüya Günlüğü, Aura Akademi ve Topluluk **yalnızca metin kartları**dır — web’e görsel eklenmeyecek.
+
 **Ürün adı:** eski “AI Rehber” ifadesi kullanılmaz; resmi özellik adı **Anima**.
 
 ## Ana Sayfa / Home

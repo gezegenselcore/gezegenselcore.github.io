@@ -1629,17 +1629,38 @@ body.aura-launch .scroll-top {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
 }
 
-/* Ekran görüntüsü olmayan alanlar (aynı ızgara hizası) */
-.aura-launch__shot-inner--placeholder {
-  width: 50%;
-  max-width: 200px;
-  margin: 0 auto;
-  aspect-ratio: 1080 / 2340;
-  border-radius: 12px;
-  box-sizing: border-box;
-  background: linear-gradient(165deg, rgba(28, 40, 56, 0.75) 0%, rgba(10, 16, 24, 0.9) 100%);
-  border: 1px dashed rgba(201, 162, 39, 0.22);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+/* Görsel olmayan alanlar: yalnızca metin kartları */
+.aura-launch__copy-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  max-width: 42rem;
+  margin: 1.75rem auto 0;
+}
+
+@media (min-width: 640px) {
+  .aura-launch__copy-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 48rem;
+  }
+}
+
+.aura-launch__copy-card {
+  margin: 0;
+  padding: 1rem 1.15rem 1.15rem;
+  text-align: center;
+}
+
+.aura-launch__copy-title {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--gc-accent);
+}
+
+.aura-launch__copy-card .aura-launch__shot-desc {
+  margin-top: 0;
 }
 
 .aura-launch__shot-title {
