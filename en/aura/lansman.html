@@ -7,7 +7,8 @@
   <link rel="alternate" hreflang="tr" href="https://gezegenselcore.com/tr/aura/lansman.html" />
   <link rel="alternate" hreflang="en" href="https://gezegenselcore.com/en/aura/lansman.html" />
   <link rel="alternate" hreflang="x-default" href="https://gezegenselcore.com/en/aura/lansman.html" />
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="alternate" hreflang="en" href="https://gezegenselcore.com/en/aura/lansman.html" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -25,7 +26,7 @@
     <div class="gc-tech-bg__layer gc-tech-bg__layer--schema"></div>
   </div>
 
-    <header class="site-header">
+      <header class="site-header">
     <div class="site-header__inner">
       <a class="brand" href="../index.html#ust">GEZEGENSEL CORE</a>
       <div class="site-header__tail">
@@ -75,32 +76,19 @@
             </a>
           </div>
         </div>
-        <div class="aura-launch__hero-visual" aria-hidden="true">
-          <div class="aura-launch__phone">
+        <div class="aura-launch__hero-visual">
+          <div class="aura-launch__phone" role="img" aria-label="AURA home screen screenshot">
             <div class="aura-launch__phone-frame">
-              <div class="aura-launch__phone-notch"></div>
-              <div class="aura-launch__phone-screen">
-                <header class="aura-launch__mock-header">
-                  <span class="aura-launch__mock-dot"></span>
-                  <span class="aura-launch__mock-title">Today</span>
-                </header>
-                <div class="aura-launch__mock-summary aura-launch__glass">
-                  <span class="aura-launch__mock-label">Morning summary</span>
-                  <p class="aura-launch__mock-line">Capacity <strong>medium</strong> · short focus session</p>
-                </div>
-                <div class="aura-launch__mock-cards">
-                  <div class="aura-launch__mock-card aura-launch__glass">
-                    <span class="aura-launch__mock-k">Suggestion</span>
-                    <p>15 min breath + light walk</p>
-                  </div>
-                  <div class="aura-launch__mock-card aura-launch__glass">
-                    <span class="aura-launch__mock-k">Data</span>
-                    <p>Yesterday ↔ today: steadier sleep</p>
-                  </div>
-                </div>
-                <div class="aura-launch__mock-chart" role="presentation">
-                  <span></span><span></span><span></span><span></span><span></span>
-                </div>
+              <div class="aura-launch__phone-notch" aria-hidden="true"></div>
+              <div class="aura-launch__phone-screen aura-launch__phone-screen--real">
+                <img
+                  src="../../aura/AuraEkranGoruntuleri/EN/AnaSayfa.jpg"
+                  alt="AURA app home screen"
+                  width="1080"
+                  height="2340"
+                  decoding="async"
+                  fetchpriority="high"
+                >
               </div>
             </div>
           </div>
@@ -146,6 +134,59 @@
       </div>
     </section>
 
+    <section class="aura-launch__section aura-launch__section--shots" id="screens" aria-labelledby="aura-shots-baslik">
+      <div class="section-inner">
+        <h2 class="aura-launch__h2 aura-launch__h2--center" id="aura-shots-baslik">Screenshots</h2>
+        <p class="aura-launch__shots-lead">English UI shown below; Turkish is fully supported in the app.</p>
+        <div class="aura-launch__gallery">
+          <figure class="aura-launch__shot aura-launch__glass">
+            <img
+              src="../../aura/AuraEkranGoruntuleri/EN/AnaSayfa.jpg"
+              alt="Home"
+              width="1080"
+              height="2340"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>Home</figcaption>
+          </figure>
+          <figure class="aura-launch__shot aura-launch__glass">
+            <img
+              src="../../aura/AuraEkranGoruntuleri/EN/AuraKüresiPaneli.jpg"
+              alt="Aura sphere panel"
+              width="1080"
+              height="2340"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>Aura sphere panel</figcaption>
+          </figure>
+          <figure class="aura-launch__shot aura-launch__glass">
+            <img
+              src="../../aura/AuraEkranGoruntuleri/EN/Binaural.jpg"
+              alt="Binaural experience"
+              width="1080"
+              height="2340"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>Binaural</figcaption>
+          </figure>
+          <figure class="aura-launch__shot aura-launch__glass">
+            <img
+              src="../../aura/AuraEkranGoruntuleri/EN/Anima.jpg"
+              alt="Anima screen"
+              width="1080"
+              height="2340"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>Anima</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <section class="aura-launch__section aura-launch__section--alt" id="gizlilik" aria-labelledby="aura-gizlilik-baslik">
       <div class="section-inner aura-launch__narrow">
         <h2 class="aura-launch__h2" id="aura-gizlilik-baslik">Privacy First</h2>
@@ -176,7 +217,7 @@
     </section>
   </main>
 
-    <footer class="site-footer">
+      <footer class="site-footer">
     <nav class="gc-footer-nav" aria-label="Site">
       <a href="../privacy.html">
         <svg class="gc-footer-nav__icon gc-footer-nav__icon--stroke" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
