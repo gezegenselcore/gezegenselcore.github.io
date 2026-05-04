@@ -1149,3 +1149,415 @@ body.gc-inner .gc-doc a.btn-ghost {
   border: 1px solid rgba(10, 22, 40, 0.12);
   color: var(--gc-ink);
 }
+
+/* ——— AURA lansman (koyu tema + cam morfolojisi) ——— */
+body.aura-launch {
+  color: #e8eef5;
+  background: radial-gradient(120% 80% at 50% -10%, rgba(201, 162, 39, 0.12) 0%, transparent 45%),
+    linear-gradient(180deg, #060a10 0%, #0c1520 42%, #080d14 100%);
+}
+
+body.aura-launch .gc-tech-bg__layer--grid {
+  opacity: 0.35;
+}
+
+body.aura-launch .gc-tech-bg__layer--schema {
+  opacity: 0.28;
+  mix-blend-mode: screen;
+}
+
+body.aura-launch .site-header {
+  background: rgba(8, 14, 22, 0.88);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.14);
+  backdrop-filter: blur(14px);
+}
+
+body.aura-launch .brand,
+body.aura-launch .nav-desktop a,
+body.aura-launch .nav-panel a {
+  color: #e8eef5;
+}
+
+body.aura-launch .nav-desktop a:hover,
+body.aura-launch .nav-panel a:hover,
+body.aura-launch .nav-desktop a:focus-visible,
+body.aura-launch .nav-panel a:focus-visible {
+  color: var(--gc-accent);
+}
+
+body.aura-launch .nav-burger span {
+  background: #e8eef5;
+}
+
+body.aura-launch .gc-lang-switch a {
+  color: #c9d4e0;
+}
+
+body.aura-launch .gc-lang-switch a:hover,
+body.aura-launch .gc-lang-switch a:focus-visible {
+  background: rgba(201, 162, 39, 0.18);
+  color: #fff;
+}
+
+body.aura-launch .gc-lang-switch__current {
+  background: rgba(201, 162, 39, 0.22);
+  border-color: rgba(201, 162, 39, 0.35);
+  color: #fff;
+}
+
+body.aura-launch .gc-lang-switch__sep {
+  color: rgba(232, 238, 245, 0.45);
+}
+
+body.aura-launch .site-footer {
+  border-top: 1px solid rgba(201, 162, 39, 0.12);
+  background: rgba(6, 10, 16, 0.65);
+  backdrop-filter: blur(10px);
+}
+
+body.aura-launch .gc-footer-nav a {
+  color: #d8e2ec;
+}
+
+body.aura-launch .gc-footer-nav a:hover,
+body.aura-launch .gc-footer-nav a:focus-visible {
+  color: var(--gc-accent);
+  background: rgba(201, 162, 39, 0.12);
+}
+
+body.aura-launch .site-footer__legal {
+  color: rgba(232, 238, 245, 0.55);
+}
+
+body.aura-launch .scroll-top {
+  background: rgba(20, 32, 48, 0.75);
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  color: var(--gc-accent);
+}
+
+.aura-launch__glass {
+  background: rgba(18, 28, 42, 0.55);
+  border: 1px solid rgba(232, 238, 245, 0.1);
+  border-radius: var(--gc-radius);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(14px);
+}
+
+.aura-launch__hero {
+  padding: clamp(1.25rem, 4vw, 2.5rem) 1rem clamp(2rem, 5vw, 3.5rem);
+}
+
+.aura-launch__hero-inner {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 2.75rem);
+  align-items: center;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+  .aura-launch__hero-inner {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 380px);
+    gap: 2.5rem;
+  }
+}
+
+.aura-launch__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gc-accent);
+}
+
+.aura-launch__eyebrow-icon {
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.aura-launch__title {
+  margin: 0 0 0.85rem;
+  font-size: clamp(1.65rem, 4.8vw, 2.35rem);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: #f4f7fb;
+}
+
+.aura-launch__lead {
+  margin: 0 0 1.35rem;
+  font-size: clamp(1rem, 2.4vw, 1.12rem);
+  line-height: 1.65;
+  color: rgba(232, 238, 245, 0.82);
+  max-width: 38rem;
+}
+
+.aura-launch__hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.aura-launch__btn-play.btn-play {
+  margin-top: 0;
+}
+
+.aura-launch__btn-play--large {
+  padding: 0.85rem 1.35rem;
+  font-size: 0.95rem;
+  min-height: 48px;
+}
+
+.aura-launch__phone {
+  display: flex;
+  justify-content: center;
+  perspective: 900px;
+}
+
+.aura-launch__phone-frame {
+  width: min(100%, 280px);
+  padding: 0.55rem;
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(40, 52, 68, 0.9) 0%, rgba(12, 18, 28, 0.95) 100%);
+  border: 1px solid rgba(232, 238, 245, 0.12);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transform: rotateY(-6deg) rotateX(4deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aura-launch__phone-frame {
+    transform: none;
+  }
+}
+
+.aura-launch__phone-notch {
+  height: 14px;
+  margin: 0 auto 0.35rem;
+  width: 38%;
+  border-radius: 0 0 10px 10px;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.aura-launch__phone-screen {
+  border-radius: 20px;
+  padding: 0.65rem 0.75rem 1rem;
+  min-height: 320px;
+  background: linear-gradient(180deg, #0d1520 0%, #0a121c 100%);
+  border: 1px solid rgba(232, 238, 245, 0.06);
+}
+
+.aura-launch__mock-header {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.65rem;
+}
+
+.aura-launch__mock-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gc-accent);
+  box-shadow: 0 0 10px rgba(201, 162, 39, 0.55);
+}
+
+.aura-launch__mock-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(232, 238, 245, 0.65);
+}
+
+.aura-launch__mock-summary {
+  padding: 0.55rem 0.65rem;
+  margin-bottom: 0.55rem;
+}
+
+.aura-launch__mock-label {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gc-accent);
+  margin-bottom: 0.25rem;
+}
+
+.aura-launch__mock-line {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: rgba(232, 238, 245, 0.88);
+}
+
+.aura-launch__mock-line strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.aura-launch__mock-cards {
+  display: grid;
+  gap: 0.45rem;
+  margin-bottom: 0.65rem;
+}
+
+.aura-launch__mock-card {
+  padding: 0.45rem 0.55rem;
+}
+
+.aura-launch__mock-card p {
+  margin: 0.2rem 0 0;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: rgba(232, 238, 245, 0.85);
+}
+
+.aura-launch__mock-k {
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(201, 162, 39, 0.85);
+}
+
+.aura-launch__mock-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.25rem;
+  height: 52px;
+  padding: 0 0.15rem;
+}
+
+.aura-launch__mock-chart span {
+  flex: 1;
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(180deg, rgba(201, 162, 39, 0.65) 0%, rgba(201, 162, 39, 0.12) 100%);
+  min-height: 18%;
+}
+
+.aura-launch__mock-chart span:nth-child(1) {
+  height: 38%;
+}
+.aura-launch__mock-chart span:nth-child(2) {
+  height: 62%;
+}
+.aura-launch__mock-chart span:nth-child(3) {
+  height: 48%;
+}
+.aura-launch__mock-chart span:nth-child(4) {
+  height: 72%;
+}
+.aura-launch__mock-chart span:nth-child(5) {
+  height: 55%;
+}
+
+.aura-launch__section {
+  padding: clamp(1.75rem, 4vw, 2.75rem) 1rem;
+}
+
+.aura-launch__section--alt {
+  background: rgba(8, 14, 22, 0.35);
+  border-top: 1px solid rgba(232, 238, 245, 0.06);
+  border-bottom: 1px solid rgba(232, 238, 245, 0.06);
+}
+
+.aura-launch__narrow {
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+.aura-launch__h2 {
+  margin: 0 0 0.85rem;
+  font-size: clamp(1.2rem, 3.2vw, 1.45rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #f4f7fb;
+}
+
+.aura-launch__h2--center {
+  text-align: center;
+}
+
+.aura-launch__prose {
+  margin: 0;
+  font-size: clamp(0.98rem, 2.2vw, 1.05rem);
+  line-height: 1.65;
+  color: rgba(232, 238, 245, 0.82);
+}
+
+.aura-launch__prose a {
+  color: var(--gc-accent);
+  font-weight: 600;
+}
+
+.aura-launch__prose a:hover,
+.aura-launch__prose a:focus-visible {
+  color: #f0d875;
+}
+
+.aura-launch__features {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 700px) {
+  .aura-launch__features {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.15rem;
+  }
+}
+
+.aura-launch__feature {
+  padding: 1.1rem 1.15rem;
+  margin: 0;
+}
+
+.aura-launch__h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--gc-accent);
+}
+
+.aura-launch__feature p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: rgba(232, 238, 245, 0.82);
+}
+
+.aura-launch__cta {
+  padding: clamp(2rem, 5vw, 3rem) 1rem clamp(2.5rem, 6vw, 4rem);
+}
+
+.aura-launch__cta-inner {
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  text-align: center;
+}
+
+.aura-launch__cta-title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.25rem, 3.5vw, 1.55rem);
+  font-weight: 800;
+  color: #f4f7fb;
+}
+
+.aura-launch__cta-text {
+  margin: 0 0 1.25rem;
+  font-size: 1rem;
+  color: rgba(232, 238, 245, 0.78);
+}

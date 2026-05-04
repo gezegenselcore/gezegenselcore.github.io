@@ -67,6 +67,7 @@ function otherLocaleFile(fromFile) {
     ["aura/privacy-policy.html", "en/aura/privacy-policy.html"],
     ["aura/terms-of-use.html", "en/aura/terms-of-use.html"],
     ["pages/aura/support.html", "en/pages/aura/support.html"],
+    ["tr/aura/lansman.html", "en/aura/lansman.html"],
     ["pages/refollow/policies/privacy.html", "en/pages/refollow/policies/privacy.html"],
     ["pages/refollow/policies/terms.html", "en/pages/refollow/policies/terms.html"],
     ["pages/refollow/policies/support.html", "en/pages/refollow/policies/support.html"],
