@@ -1150,7 +1150,7 @@ body.gc-inner .gc-doc a.btn-ghost {
   color: var(--gc-ink);
 }
 
-/* ——— AURA lansman (koyu tema + cam morfolojisi) ——— */
+/* ——— AURA ürün sayfası (koyu tema + cam morfolojisi) ——— */
 body.aura-launch {
   color: #e8eef5;
   background: radial-gradient(120% 80% at 50% -10%, rgba(201, 162, 39, 0.12) 0%, transparent 45%),

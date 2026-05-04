@@ -67,7 +67,7 @@ function otherLocaleFile(fromFile) {
     ["aura/privacy-policy.html", "en/aura/privacy-policy.html"],
     ["aura/terms-of-use.html", "en/aura/terms-of-use.html"],
     ["pages/aura/support.html", "en/pages/aura/support.html"],
-    ["tr/aura/lansman.html", "en/aura/lansman.html"],
+    ["tr/aura/index.html", "en/aura/index.html"],
     ["pages/refollow/policies/privacy.html", "en/pages/refollow/policies/privacy.html"],
     ["pages/refollow/policies/terms.html", "en/pages/refollow/policies/terms.html"],
     ["pages/refollow/policies/support.html", "en/pages/refollow/policies/support.html"],
@@ -174,9 +174,15 @@ function localeFromFile(posixFile) {
 }
 
 function logicalPathFromFile(posixFile) {
-  if (posixFile.startsWith("tr/")) return "/" + posixFile.slice("tr".length);
-  if (posixFile.startsWith("en/")) return "/" + posixFile.slice("en".length);
-  return "/" + posixFile.replace(/^\//, "");
+  let p;
+  if (posixFile.startsWith("tr/")) p = "/" + posixFile.slice("tr".length);
+  else if (posixFile.startsWith("en/")) p = "/" + posixFile.slice("en".length);
+  else p = "/" + posixFile.replace(/^\//, "");
+  /* /aura/index.html → /aura/ (temiz canonical & hreflang) */
+  if (p.endsWith("/index.html")) {
+    p = p.slice(0, -"index.html".length);
+  }
+  return p;
 }
 
 function seoBlockFor(posixFile) {
@@ -203,6 +209,11 @@ function ensureSeoForLocalePages(html, posixFile) {
   let out = html.replace(/^\s*<link\s+rel="canonical"[^>]*>\s*\n?/gim, "");
   // Replace existing alternates for tr/en/x-default if present
   out = out.replace(/^\s*<link\s+rel="alternate"\s+hreflang="(?:tr|en|x-default)"[^>]*>\s*\n?/gim, "");
+  /* Bazı dosyalarda kalan mükerrer en satırı (index.html yolu) */
+  out = out.replace(
+    /^\s*<link\s+rel="alternate"\s+hreflang="en"\s+href="https:\/\/gezegenselcore\.com\/en\/aura\/index\.html"\s*\/>\s*\n?/gim,
+    ""
+  );
 
   if (out.includes('rel="canonical"') && out.includes('hreflang="tr"')) return out;
 
