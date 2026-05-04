@@ -25,6 +25,15 @@ Remote Config’te verilen URL `gezegenselcore.com` içeriyorsa, uygulama açıl
 
 - Hub ve marka sayfaları: `tools/i18n/messages/` + `{{i18n:…}}` ile **yalnızca TR ve EN**; ayrıntı: `docs/SITE_I18N_ARCHITECTURE.md`.
 
+## AURA ürün sayfası (pazarlama / tanıtım)
+
+| | URL |
+|---|-----|
+| Türkçe | `https://gezegenselcore.com/tr/aura/` |
+| English | `https://gezegenselcore.com/en/aura/` |
+
+Öne çıkan alan açıklamalarının metin SSOT’u: **`docs/AURA_PRODUCT_PAGE_COPY.md`**. Uygulamada eski “AI Rehber” adı web metinlerinde kullanılmaz; özellik adı **Anima** olarak geçer.
+
 ## Web tarafı depolama
 
 - Anahtar: `localStorage` **`gezegensel-lang`**
@@ -38,4 +47,4 @@ Site push edildikten sonra GitHub Pages önbelleği nedeniyle birkaç dakika gec
 2. `node tools/build-locale-pages.mjs`
 3. Aura `legal-public/` ve gerekirse `docs/legal` ile senkron.
 
-Son güncelleme: 2026-04-18
+Son güncelleme: 2026-05-04
